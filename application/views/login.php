@@ -23,38 +23,40 @@
                 <div class="bg-white shadow">
                     <div class="p-4">
                         <div class="text-center mt-3">
-                            <a href="index-1.html">
-                                <img src="<?php echo base_url() ?>assets/images/logo.png" alt="" class="logo-dark" height="150" />
-                            </a>
-                            <p class="text-muted mt-2">Login Untuk memulai Voting</p>
-                        </div>
-                        <div class="p-3">
-                            <form id="loginForm" action="<?php echo base_url('secure/check_login') ?>" method="POST" class="av-invalid">
-                                <div class="pesan"></div>
-                                <div class="mb-3">
-                                    <label for="nim" class="form-label">NIM</label>
-                                    <input name="nim" required="" placeholder="Masukkan Nim anda" id="nim"
-                                    type="number" class="form-control" value="" />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="userpassword" class="form-label">Password</label>
-                                    <input name="password" minlength="4" required="" placeholder="Masukkan password anda"
-                                    id="userpassword" type="password" class="form-control" value="" />
-                                </div>
-                                <div class="d-grid mt-3"><button type="submit" class="btn btn-primary btn-none">Log
-                                In</button></div>
+                           <a href="<?php echo base_url(); ?>">
+                            <img src="<?php echo base_url() ?>assets/images/logo.png" alt="" class="logo-dark" height="150" />
+                        </a>
+                        <p class="text-muted mt-2">Login Untuk memulai Voting</p>
+                        <p><?php echo $this->session->flashdata('message'); ?></p>
+                    </div>
+                    <div class="p-3">
+                       
+                        <form id="loginForm" action="<?php echo base_url('secure/check_login') ?>" method="POST" class="av-invalid">
+                            <div class="pesan"></div>
+                            <div class="mb-3">
+                                <label for="nim" class="form-label">NIM</label>
+                                <input name="nim" required="" placeholder="Masukkan Nim anda" id="nim"
+                                type="number" class="form-control" value="" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="userpassword" class="form-label">Password</label>
+                                <input name="password" minlength="4" required="" placeholder="Masukkan password anda"
+                                id="userpassword" type="password" class="form-control" value="" />
+                            </div>
+                            <div class="d-grid mt-3"><button type="submit" class="btn btn-primary btn-none">Log
+                            In</button></div>
 
-                            </form>
-                        </div>
+                        </form>
                     </div>
                 </div>
-
             </div>
-            <!-- end col -->
+
         </div>
-        <!-- end row -->
+        <!-- end col -->
     </div>
-    <!-- end container -->
+    <!-- end row -->
+</div>
+<!-- end container -->
 </section>
 <!-- end section -->
 

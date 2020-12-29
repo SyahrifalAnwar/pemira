@@ -14,11 +14,11 @@ $config['uri_protocol']	= 'PATH_INFO';
 $config['url_suffix'] = '';
 
 //Email Setting
-$config['email_host'] = 'smtp.zoho.com';
-$config['email_username'] = 'info@izzi-soft.com';
-$config['email_password'] = 'password890';
+$config['email_host'] = 'pemira-sttnf.veteran20.com';
+$config['email_username'] = '1cf787e2a93580';
+$config['email_password'] = '018316405de0d1';
 
-$config['email_admin'] = 'info@izzi-soft.com';
+$config['email_admin'] = 'info@pemira-sttnf.veteran20.com';
 //End Email Setting
 
 /*

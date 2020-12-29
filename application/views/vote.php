@@ -68,7 +68,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="container">
           <div class="row">
             <?php foreach ($get_organisasi as $get_organisasi) {?>
-            <div class="col-lg-4">
+            <a class="col-lg-6" style="cursor: pointer;" href="<?php $id_organisasi = $get_organisasi['id_organisasi']; echo base_url('vote/kelompok/').$id_organisasi ?>">
               <div class="card">
                 <div class="card-body">
 
@@ -79,7 +79,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
               </div>
 
-            </div>
+            </a>
           <?php } ?>
             <!-- /.col-md-6 -->
           </div>

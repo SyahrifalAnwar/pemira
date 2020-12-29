@@ -35,4 +35,20 @@ class M_data extends CI_Model {
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
+
+	public function save_dokumen($simpan)
+	{
+		$this->db->insert('peserta', $simpan);
+	}
+
+	public function register($register)
+	{
+		$this->db->insert('pemilih', $register);
+	}
+
+	public function cekdokumen($nim)
+	{
+		$sql = $this->db->query("SELECT `nim` FROM `pemilih` WHERE `nim`= $nim");
+		return $sql->result();
+	}
 }
