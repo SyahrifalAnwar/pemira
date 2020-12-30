@@ -3,7 +3,9 @@
 <html lang="en">
 
 <?php $this->load->view('include/head') ?>
-<body>
+<body 
+    style="background-image: url('<?php echo base_url() ?>assets/images/auth-bg.png');background-repeat: no-repeat;
+  background-attachment: fixed;">
     <!-- Loader -->
     <div id="preloader">
         <div id="status">
@@ -15,8 +17,7 @@
         </div>
     </div>
 
-    <section class="vh-100 align-items-center position-relative"
-    style="background-image: url('<?php echo base_url() ?>assets/images/auth-bg.png');">
+    <section class="vh-100 align-items-center position-relative">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-12 col-xl-12">
@@ -35,7 +36,7 @@
                                     <label for="nim" class="form-label">Surat Keterangan Mahasiswa Aktif</label>
                                     <div class="row">
                                         <div class="col-md-12">
-                                         <input type="file" required="" name="surat_mahasiswaaktif" class="form-control" >
+                                         <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="surat_mahasiswaaktif" class="form-control" >
                                     
 
                                      </div>
@@ -50,7 +51,7 @@
                                 <label for="nim" class="form-label">Kartu Hasil Studi dari Semester 1 hingga saat ini</label>
                                 <div class="row">
                                     <div class="col-md-12">
-                                     <input type="file" required="" name="surat_hasilstudi" class="form-control" >
+                                     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="surat_hasilstudi" class="form-control" >
                                 
                                  </div>
                                  <div class="col-md-3">
@@ -64,7 +65,7 @@
                             <label for="nim" class="form-label">Surat Keterangan Aktif Mentoring</label>
                             <div class="row">
                                 <div class="col-md-12">
-                                 <input type="file" required="" name="surat_mentoring" class="form-control" >
+                                 <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="surat_mentoring" class="form-control" >
                                 
                              </div>
                              <div class="col-md-3">
@@ -78,7 +79,7 @@
                         <label for="nim" class="form-label">Surat Keterangan Cuti Organisasi</label>
                         <div class="row">
                             <div class="col-md-12">
-                             <input type="file" required="" name="surat_cutiorganisasi" class="form-control" >
+                             <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="surat_cutiorganisasi" class="form-control" >
                             
                          </div>
                          <div class="col-md-3">
@@ -92,7 +93,7 @@
                     <label for="nim" class="form-label">Sertifikat Kepanitiaan / Organisasi di Lingkungan STT NF</label>
                     <div class="row">
                         <div class="col-md-12">
-                         <input type="file" required="" name="surat_kepanitiaan1" class="form-control" >
+                         <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="surat_kepanitiaan1" class="form-control" >
                         
                      </div>
                      <div class="col-md-3">
@@ -104,7 +105,7 @@
             
             <div class="row">
                 <div class="col-md-12">
-                 <input type="file" name="surat_kepanitiaan2" class="form-control" >
+                 <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="surat_kepanitiaan2" class="form-control" >
                 
              </div>
              <div class="col-md-3">
@@ -115,7 +116,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-             <input type="file" name="surat_kepanitiaan3" class="form-control" >
+             <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="surat_kepanitiaan3" class="form-control" >
             
          </div>
          <div class="col-md-3">
@@ -126,7 +127,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-         <input type="file" name="surat_kepanitiaan4" class="form-control" >
+         <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="surat_kepanitiaan4" class="form-control" >
         
      </div>
      <div class="col-md-3">
@@ -137,7 +138,7 @@
 </div>
 <div class="row">
     <div class="col-md-12">
-     <input type="file" name="surat_kepanitiaan5" class="form-control" >
+     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="surat_kepanitiaan5" class="form-control" >
 
  </div>
  <div class="col-md-3">
@@ -152,7 +153,7 @@
     <label for="nim" class="form-label">Grand Design meliputi : <br><small> Visi, Misi, dan Program</small></label>
     <div class="row">
         <div class="col-md-12">
-         <input type="file" required="" name="visi_misi_program" class="form-control" >
+         <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="visi_misi_program" class="form-control" >
     
      </div>
      <div class="col-md-3">
@@ -166,7 +167,7 @@
     <label for="nim" class="form-label">Surat Dukungan Mahasiswa meliputi : <br><small>Nama Lengkap, NIM, dan Tanda Tangan</small></label>
     <div class="row">
         <div class="col-md-12">
-         <input type="file" required="" name="surat_dukungan" class="form-control" >
+         <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="surat_dukungan" class="form-control" >
     
      </div>
      <div class="col-md-3">

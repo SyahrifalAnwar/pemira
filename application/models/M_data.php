@@ -38,7 +38,12 @@ class M_data extends CI_Model {
 
 	public function save_dokumen($simpan)
 	{
-		$this->db->insert('peserta', $simpan);
+		$this->db->insert('dokumen_presma', $simpan);
+	}
+
+	public function save_dokumen_dpm($simpan)
+	{
+		$this->db->insert('dokumen_dpm', $simpan);
 	}
 
 	public function register($register)
@@ -48,7 +53,13 @@ class M_data extends CI_Model {
 
 	public function cekdokumen($nim)
 	{
-		$sql = $this->db->query("SELECT `nim` FROM `pemilih` WHERE `nim`= $nim");
+		$sql = $this->db->query("SELECT `nim` FROM `dokumen_dpm` WHERE `nim`= $nim");
+		return $sql->result();
+	}
+
+	public function cekdokumen_presma($nim)
+	{
+		$sql = $this->db->query("SELECT `ketua_nim` FROM `dokumen_presma` WHERE `ketua_nim`= $nim");
 		return $sql->result();
 	}
 }

@@ -27,27 +27,6 @@ class Secure extends CI_Controller {
 		$password = rand();
 
 		if ($this->uri->segment(3) == 1) {
-			$user_data = array(
-				'organisasi'	=> $this->input->post('organisasi'),
-				'nim' 			=> $this->input->post('nim'),
-				'nama' 			=> $this->input->post('nama'),
-				'email' 		=> $this->input->post('email'),
-				'no_telp' 		=> $this->input->post('no_telp'),
-				'password' 		=> $password,
-			);
-			$this->session->set_userdata($user_data);
-
-			mkdir('upload/'.$this->session->userdata('nim'));
-
-			$cekdokumen = $this->M_data->cekdokumen($this->input->post('nim'));
-			if ($cekdokumen) {
-				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Anda sudah terdaftar<br>Cek email untuk melihat informasi akun</div>');
-				redirect('secure/login');
-			}else{
-				$this->load->view('daftar_kpr_1');
-			}
-
-			
 
 		}else if ($this->uri->segment(3) == 2) {
 			$surat_mahasiswaaktif = $_FILES["surat_mahasiswaaktif"]["tmp_name"];
@@ -111,7 +90,7 @@ class Secure extends CI_Controller {
 				'visi_misi_program' => $filename_visi_misi_program,
 				'surat_dukungan' => $filename_surat_dukungan
 			);
-			$data = $this->M_data->save_dokumen($simpan);
+			$data = $this->M_data->save_dokumen_dpm($simpan);
 			
 			$register = array(
 				'id_level' => 2,
@@ -153,12 +132,12 @@ class Secure extends CI_Controller {
             
 
             if($this->email->send()) {
-            	$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Dokumen berhasil di upload<br>Silahkan cek email untuk melihat informasi akun mu</div>');
-            	redirect('secure/login');
+            	$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengupload dokumen</div>');
+            	redirect('registrasi/done');
             }
             else {
-            	$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Dokumen berhasil di upload<br>Silahkan cek email untuk melihat informasi akun mu</div>');
-            	redirect('secure/login');
+            	$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengupload dokumen</div>');
+            	redirect('registrasi/done');
             }
 
 
