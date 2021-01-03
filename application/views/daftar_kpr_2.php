@@ -25,26 +25,28 @@ background-attachment: fixed;">
          <a href="<?php echo base_url(); ?>">
              <img src="<?php echo base_url() ?>assets/images/logo.png" alt="" class="logo-dark" height="150" />
          </a>
-         <p class="text-muted mt-2"><b>UPLOAD BERKAS KETUA PEMIRA</b></p>
+         <p class="text-muted mt-2"><b>UPLOAD BERKAS PRESMA</b></p>
      </div>
      <div class="p-3">
          <form id="step1" action="<?php echo base_url('registrasi/kirimberkas_presma') ?>" method="POST"  enctype="multipart/form-data" class="av-invalid">
           <div class="pesan"></div>
           <div class="mb-3">
-           <label for="nim" class="form-label">Surat Keterangan Mahasiswa Aktif  <span class="label-required ml-1">(wajib diisi)</span></label>
+           <label for="nim" class="form-label">Surat Keterangan Mahasiswa Aktif<br>
+           <small style="color: red" id="pesan"></small></label>
            <div class="row">
             <div class="col-md-12">
-             <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="ketua_surat_mahasiswaaktif" class="form-control" >
+             <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="ketua_surat_mahasiswaaktif" class="form-control" >
          </div>
          <div class="col-md-3">
          </div>
      </div>
  </div>
  <div class="mb-3">
-   <label for="nim" class="form-label">Kartu Hasil Studi dari Semester 1 hingga saat ini</label>
+   <label for="nim" class="form-label">Kartu Hasil Studi dari Semester 1 hingga saat ini<br>
+    <small style="color: red" id="pesan2"></small></label>
    <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="ketua_surat_hasilstudi" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="ketua_surat_hasilstudi" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
@@ -54,7 +56,7 @@ background-attachment: fixed;">
    <label for="nim" class="form-label">Surat Keterangan Aktif Mentoring</label>
    <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="ketua_surat_mentoring" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="ketua_surat_mentoring" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
@@ -64,65 +66,68 @@ background-attachment: fixed;">
    <label for="nim" class="form-label">Surat Keterangan Cuti Organisasi</label>
    <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="ketua_surat_cutiorganisasi" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="ketua_surat_cutiorganisasi" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
 </div>
 </div>
 <div class="mb-3">
-   <label for="nim" class="form-label">Sertifikat Kepanitiaan / Organisasi di Lingkungan STT NF</label>
+   <label for="nim" class="form-label">Sertifikat Kepanitiaan / Organisasi di Lingkungan STT NF<br>
+    <small style="color: red" id="pesan3"></small></label>
    <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="ketua_surat_kepanitiaan1" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="ketua_surat_kepanitiaan1" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
 </div>
 <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="ketua_surat_kepanitiaan2" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="ketua_surat_kepanitiaan2" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
 </div>
 <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="ketua_surat_kepanitiaan3" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="ketua_surat_kepanitiaan3" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
 </div>
 <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="ketua_surat_kepanitiaan4" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="ketua_surat_kepanitiaan4" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
 </div>
 <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="ketua_surat_kepanitiaan5" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="ketua_surat_kepanitiaan5" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
 </div>
 </div>
 <div class="mb-3">
-   <label for="nim" class="form-label">Grand Design meliputi : <br><small> Visi, Misi, dan Program</small></label>
+   <label for="nim" class="form-label">Grand Design meliputi : <br><small> Visi, Misi, dan Program</small><br>
+           <small style="color: red" id="pesan4"></small></label>
    <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="ketua_visi_misi_program" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="ketua_visi_misi_program" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
 </div>
 </div>
 <div class="mb-5">
-   <label for="nim" class="form-label">Surat Dukungan Mahasiswa meliputi : <br><small>Nama Lengkap, NIM, dan Tanda Tangan</small></label>
+   <label for="nim" class="form-label">Surat Dukungan Mahasiswa meliputi : <br><small>Nama Lengkap, NIM, dan Tanda Tangan</small><br>
+           <small style="color: red" id="pesan5"></small></label>
    <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="ketua_surat_dukungan" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="ketua_surat_dukungan" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
@@ -170,7 +175,7 @@ background-attachment: fixed;">
          <a href="<?php echo base_url(); ?>">
              <img src="<?php echo base_url() ?>assets/images/logo.png" alt="" class="logo-dark" height="150" />
          </a>
-         <p class="text-muted mt-2"><b>UPLOAD BERKAS WAKIL PEMIRA</b></p>
+         <p class="text-muted mt-2"><b>UPLOAD BERKAS WAPRESMA</b></p>
      </div>
      <div class="p-3">
          
@@ -179,7 +184,7 @@ background-attachment: fixed;">
            <label for="nim" class="form-label">Surat Keterangan Mahasiswa Aktif</label>
            <div class="row">
             <div class="col-md-12">
-             <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="wakil_surat_mahasiswaaktif" class="form-control" >
+             <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="wakil_surat_mahasiswaaktif" class="form-control" >
          </div>
          <div class="col-md-3">
          </div>
@@ -189,7 +194,7 @@ background-attachment: fixed;">
    <label for="nim" class="form-label">Kartu Hasil Studi dari Semester 1 hingga saat ini</label>
    <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="wakil_surat_hasilstudi" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="wakil_surat_hasilstudi" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
@@ -199,7 +204,7 @@ background-attachment: fixed;">
    <label for="nim" class="form-label">Surat Keterangan Aktif Mentoring</label>
    <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="wakil_surat_mentoring" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="wakil_surat_mentoring" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
@@ -209,7 +214,7 @@ background-attachment: fixed;">
    <label for="nim" class="form-label">Surat Keterangan Cuti Organisasi</label>
    <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="wakil_surat_cutiorganisasi" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="wakil_surat_cutiorganisasi" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
@@ -219,35 +224,35 @@ background-attachment: fixed;">
    <label for="nim" class="form-label">Sertifikat Kepanitiaan / Organisasi di Lingkungan STT NF</label>
    <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="wakil_surat_kepanitiaan1" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="wakil_surat_kepanitiaan1" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
 </div>
 <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="wakil_surat_kepanitiaan2" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="wakil_surat_kepanitiaan2" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
 </div>
 <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="wakil_surat_kepanitiaan3" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="wakil_surat_kepanitiaan3" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
 </div>
 <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="wakil_surat_kepanitiaan4" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="wakil_surat_kepanitiaan4" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
 </div>
 <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="wakil_surat_kepanitiaan5" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="wakil_surat_kepanitiaan5" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
@@ -257,7 +262,7 @@ background-attachment: fixed;">
    <label for="nim" class="form-label">Grand Design meliputi : <br><small> Visi, Misi, dan Program</small></label>
    <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="wakil_visi_misi_program" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="wakil_visi_misi_program" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
@@ -267,7 +272,7 @@ background-attachment: fixed;">
    <label for="nim" class="form-label">Surat Dukungan Mahasiswa meliputi : <br><small>Nama Lengkap, NIM, dan Tanda Tangan</small></label>
    <div class="row">
     <div class="col-md-12">
-     <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="wakil_surat_dukungan" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="wakil_surat_dukungan" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
@@ -309,33 +314,54 @@ background-attachment: fixed;">
 <?php $this->load->view('include/script') ?>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+<script type="text/javascript">
+  function validate_fileupload(fileName)
+  {
+    var allowed_extensions = new Array("pdf","doc","png","jpg","docx");
+    var file_extension = fileName.split('.').pop().toLowerCase();
+
+    for(var i = 0; i < allowed_extensions.length; i++)
+    {
+      if(allowed_extensions[i]==file_extension)
+      {
+        return true;
+      }
+    }
+
+    alert('Dokumen hanya boleh pdf, gambar atau doc');
+    return false;
+  }
+</script>
 <script>
  $(document).ready(function(){
 
+
+
   $('.next').click(function(e) {
       if (!$(this).hasClass('disabled')) {
-        var a = document.forms["step1"]["ketua_surat_mahasiswaaktif"].value;
-        var b = document.forms["step1"]["ketua_surat_hasilstudi"].value;
-        var c = document.forms["step1"]["ketua_surat_kepanitiaan1"].value;
-        var d = document.forms["step1"]["ketua_visi_misi_program"].value;
-        var e = document.forms["step1"]["ketua_surat_dukungan"].value;
+        let a = document.forms["step1"]["ketua_surat_mahasiswaaktif"].value;
+        let b = document.forms["step1"]["ketua_surat_hasilstudi"].value;
+        let c = document.forms["step1"]["ketua_surat_kepanitiaan1"].value;
+        let d = document.forms["step1"]["ketua_visi_misi_program"].value;
+        let e = document.forms["step1"]["ketua_surat_dukungan"].value;
         if (a == "") {
-            alert("Dokumen tidak boleh kosong");
-            return false;
+          document.getElementById("pesan").innerHTML = "*Dokumen tidak boleh kosong";
+          return false;
         }else if (b == "") {
-            alert("Dokumen tidak boleh kosong");
-            return false;
+          document.getElementById("pesan2").innerHTML = "*Dokumen tidak boleh kosong";
+          return false;
         }else if (c == "") {
-            alert("Dokumen tidak boleh kosong");
-            return false;
+          document.getElementById("pesan3").innerHTML = "*Dokumen tidak boleh kosong";
+          return false;
         }else if (d == "") {
-            alert("Dokumen tidak boleh kosong");
-            return false;
+          document.getElementById("pesan4").innerHTML = "*Dokumen tidak boleh kosong";
+          return false;
         }else if (e == "") {
-            alert("Dokumen tidak boleh kosong");
-            return false;
+          document.getElementById("pesan5").innerHTML = "*Dokumen tidak boleh kosong";
+          return false;
         }
-        var current = this.closest('.step');
+
+        let current = this.closest('.step');
         $(current).css('display', 'none');
         $(current).next().fadeIn('fast');
         $('body,html').animate({ scrollTop : 0 }, 500);

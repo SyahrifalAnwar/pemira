@@ -24,8 +24,8 @@ class Registrasi extends CI_Controller {
 			$cekdokumen = $this->M_data->cekdokumen_presma($this->input->post('ketua_nim'));			
 
 			if ($cekdokumen) {
-				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Anda sudah terdaftar<br>Cek email untuk melihat informasi akun</div>');
-				redirect('secure/login');
+				$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengupload dokumen</div>');
+            	redirect('registrasi/done');
 			}else{				
 
 				$this->session->set_userdata($user_data);
@@ -180,25 +180,60 @@ class Registrasi extends CI_Controller {
 		);
 
 		$data = $this->M_data->save_dokumen($simpan);
-		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengupload dokumen</div>');
-		redirect('registrasi/done');
+
+			$config = [
+				'mailtype'  => 'html',
+				'charset'   => 'utf-8',
+				'protocol'  => 'smtp',
+				'smtp_host' => $this->config->item('email_host'),
+            	'smtp_user' => $this->config->item('email_username'),
+            	'smtp_pass'   => $this->config->item('email_password'),
+            	'smtp_crypto' => 'ssl',
+            	'smtp_port'   => 465,
+            	'crlf'    => "\r\n",
+            	'newline' => "\r\n",
+            	'wordwrap' => TRUE
+            ];
+            
+            $this->email->set_header('MIME-Version', '1.0; charset=utf-8');
+            $this->email->set_header('Content-type', 'text/html');
+            $this->email->initialize($config);
+            $this->load->library('email', $config);
+
+            $mesg = $this->load->view('mail_done', $register,true);
+
+            $this->email->from($this->config->item('email_username'), "KPR STT-NF", $this->config->item('email_username'));
+            $this->email->to( $this->session->userdata('ketua_email'));
+            $this->email->to( $this->session->userdata('wakil_email'));
+            $this->email->subject('Pendaftaran Pemira');
+            $this->email->message($mesg);
+            
+            
+
+            if($this->email->send()) {
+            	$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengupload dokumen</div>');
+            	redirect('registrasi/done');
+            }
+            else {
+            	$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengupload dokumen</div>');
+            	redirect('registrasi/done');
+            }
+
 
 	}
 
 	public function done()
 	{
 		$this->session->sess_destroy();
-    	$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
-    	$this->output->set_header("Pragma: no-cache");
+		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+		$this->output->set_header("Pragma: no-cache");
 		$this->load->view('regis/done');
 	}
 
 
 	public function dpm($value='')
 	{
-		if ($this->session->userdata('nim') == NULL) {
-			redirect('daftar_kpr');
-		}
+
 
 		$password = rand();
 
@@ -214,10 +249,15 @@ class Registrasi extends CI_Controller {
 		$cekdokumen = $this->M_data->cekdokumen($this->input->post('nim'));
 
 		if ($cekdokumen) {
+
 			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Anda sudah mengupload dokumen</div>');
 			redirect('registrasi/done');
 		}else{
 			$this->session->set_userdata($user_data);
+
+			if ($this->session->userdata('nim') == NULL) {
+				redirect('daftar_kpr');
+			}
 
 			$path = 'upload/'.$this->session->userdata('nim');
 			if(!file_exists($path)){

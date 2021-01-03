@@ -122,7 +122,7 @@ class Secure extends CI_Controller {
             $this->email->initialize($config);
             $this->load->library('email', $config);
 
-            $mesg = $this->load->view('mail_regis', $register,true);
+            $mesg = $this->load->view('mail_done', $register,true);
 
             $this->email->from($this->config->item('email_username'), "KPR STT-NF", $this->config->item('email_username'));
             $this->email->to($this->session->userdata('email'));

@@ -14,11 +14,11 @@ $config['uri_protocol']	= 'PATH_INFO';
 $config['url_suffix'] = '';
 
 //Email Setting
-$config['email_host'] = 'pemira-sttnf.veteran20.com';
-$config['email_username'] = '1cf787e2a93580';
-$config['email_password'] = '018316405de0d1';
+$config['email_host'] = 'mail.kprsttnf.com';
+$config['email_username'] = 'info@kprsttnf.com';
+$config['email_password'] = '{vi1;!#yzSH_';
 
-$config['email_admin'] = 'info@pemira-sttnf.veteran20.com';
+$config['email_admin'] = 'info@kprsttnf.com';
 //End Email Setting
 
 /*

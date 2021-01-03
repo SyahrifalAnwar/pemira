@@ -63,7 +63,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 
 				<div class="row">
-					<div class="col-lg-4">
+					<div class="col-lg-3">
+						<div class="service-box text-center px-4 py-5 position-relative mb-4">
+							<div class="service-box-content p-4">
+								<div class="icon-mono service-icon avatar-md mx-auto mb-4">
+									<i class="" data-feather="log-in"></i>
+								</div>
+								<h4 class="mb-3 font-size-22">Registrasi Ulang</h4>
+								<p class="text-muted mb-0">Registrasi Ulang untuk mengaktifkan akun</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
 						<div class="service-box text-center px-4 py-5 position-relative mb-4">
 							<div class="service-box-content p-4">
 								<div class="icon-mono service-icon avatar-md mx-auto mb-4">
@@ -76,20 +87,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 					<!-- end col -->
 
-					<div class="col-lg-4">
+					<div class="col-lg-3">
 						<div class="service-box text-center px-4 py-5 position-relative mb-4">
 							<div class="service-box-content p-4">
 								<div class="icon-mono service-icon avatar-md mx-auto mb-4">
 									<i class="" data-feather="user-check"></i>
 								</div>
 								<h4 class="mb-3 font-size-22">Memilih Kandidat</h4>
-								<p class="text-muted mb-0">Pilih kandidat yang mau anda pilih.</p>
+								<p class="text-muted mb-0">Pilih kandidat yang ingin anda pilih.</p>
 							</div>
 						</div>
 					</div>
 					<!-- end col -->
 
-					<div class="col-lg-4">
+					<div class="col-lg-3">
 						<div class="service-box text-center px-4 py-5 position-relative mb-4">
 							<div class="service-box-content p-4">
 								<div class="icon-mono service-icon avatar-md mx-auto mb-4">
@@ -123,10 +134,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="col-md-5 order-2 order-md-1 mt-md-0 mt-5">
 						<p class="text-muted mb-5">
 							<ul>
-								<li>Pemilihan Pasangan calon Ketua & Wakil BEM FAKULTAS ataupun Anggota Independen BLM FAKULTAS dilaksanakan secara LANGSUNG & TIDAK BOLEH DIWAKILKAN dengan mengedepankan prinsip-prinsip Rahasia, Umum, Bebas, jujur dan adil.</li>
-								<li>Pemilih Merupakan mahasiswa aktif Stt Terpadu Nurul FIkri Yang Telah Melakukan Registrasi Ulang pada waktu yang telah ditetapkan.</li>
-								<li>Pemungutan Suara Secara Daring pada Web E-Pemira Dilakukan Pada Tanggal 22 Pukul 07.00 Sampai Pukul 17.00</li>
-								<li>Voting Akan ditutup pada tanggal 22 pada pukul 17.00</li>
+								<li>Pemilihan Pasangan calon Ketua & Wakil BEM dilaksanakan secara LANGSUNG & TIDAK BOLEH DIWAKILKAN dengan mengedepankan prinsip-prinsip Rahasia, Umum, Bebas, jujur dan adil.</li>
+								<li>Pemilih Merupakan mahasiswa aktif STT Terpadu Nurul FIkri Yang Telah Melakukan Registrasi Ulang pada waktu yang telah ditetapkan.</li>
+								<li>Pemungutan Suara Secara Daring pada Web E-Pemira Dilakukan Pada Tanggal 29 Januari Pukul 07.00 Sampai Pukul 20.00</li>
+								<li>Voting Akan ditutup pada tanggal 29 Januari pada pukul 21.00</li>
 								<li>Pemilihan ini hanya dilakukan satu kali dan tidak dapat melakukan pemilihan ulang.</li>
 								<li>Kandidat terpilih ditetapkan berdasarkan suara terbanyak hasil pemilihan.</li>
 							</ul>

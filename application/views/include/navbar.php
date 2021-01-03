@@ -18,12 +18,13 @@
 				<li class="nav-item">
 					<a href="<?php echo base_url('agenda_kegiatan') ?>" class="nav-link">Agenda & Kegiatan</a>
 				</li>
+				<!-- 
 				<li class="nav-item">
-					<a href="<?php echo base_url('quick_count') ?>" class="nav-link">Quick Count</a>
+					<a href="<?php echo base_url('quick_count') ?>" class="nav-link">Real Count</a>
 				</li>
 				<li class="nav-item">
 					<a href="<?php echo base_url('kandidat') ?>" class="nav-link">Kandidat</a>
-				</li>
+				</li> -->
 				
 			</ul>
 			<a href="<?php echo base_url('secure/login') ?>" class="btn btn-sm rounded-pill nav-btn ms-lg-3">Login</a>
