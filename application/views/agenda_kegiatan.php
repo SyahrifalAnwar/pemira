@@ -6,6 +6,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!DOCTYPE html>
 <html lang="en">
 <?php $this->load->view('include/head') ?>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5ff6af1bc31c9117cb6c36e1/1erdpo151';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 <style>
 	* {
 		box-sizing: border-box;
@@ -175,34 +188,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<section class="section bg-light" id="team">
 
 
-					<div class="timeline">
-						<div class="cl left">
-							<div class="content">
-								<h3>28 Desember 2020 - 7 Januari 2021</h3>
-								<p>Pendaftaran + Pengumpulan Berkas</p>
+					<div class="timeline ">
+						<div class="cl left ">
+							<div class="content bg-dark">
+								<h3 style="color: white">28 Desember 2020 - 10 Januari 2021</h3>
+								<p style="color: white">Pendaftaran + Pengumpulan Berkas</p>
 							</div>
 						</div>
 						<div class="cl right">
 							<div class="content">
-								<h3>8 Januari 2021</h3>
+								<h3>11 Januari 2021</h3>
 								<p>Uji Kelayakan + Sidang Verifikasi + Pengumuman</p>
 							</div>
 						</div>
 						<div class="cl left">
 							<div class="content">
-								<h3>9 - 17 Januari 2021</h3>
+								<h3>12 - 20 Januari 2021</h3>
 								<p>Masa Kampanye</p>
 							</div>
 						</div>
 						<div class="cl right">
 							<div class="content">
-								<h3>14 Januari 2021</h3>
+								<h3>16 Januari 2021</h3>
 								<p>Uji Publik BEM</p>
 							</div>
 						</div>
 						<div class="cl left">
 							<div class="content">
-								<h3>18 Januari 2021</h3>
+								<h3>21 Januari 2021</h3>
 								<p>Sidang Kampanye</p>
 							</div>
 						</div>

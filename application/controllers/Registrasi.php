@@ -211,11 +211,11 @@ class Registrasi extends CI_Controller {
             
 
             if($this->email->send()) {
-            	$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengupload dokumen</div>');
+            	$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengupload dokumen, Jika dokumen dirasa belum lengkap, silahkan menghubungi panitia.</div>');
             	redirect('registrasi/done');
             }
             else {
-            	$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengupload dokumen</div>');
+            	$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengupload dokumen, Jika dokumen dirasa belum lengkap, silahkan menghubungi panitia.</div>');
             	redirect('registrasi/done');
             }
 

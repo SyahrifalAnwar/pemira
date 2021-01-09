@@ -158,7 +158,7 @@
 <div style="line-height: 1.8; font-size: 12px; color: #6868a6; font-family: Poppins, Arial, Helvetica, sans-serif; mso-line-height-alt: 22px;">
 
 <p style="font-size: 14px; line-height: 1.8; word-break: break-word; text-align: center; mso-line-height-alt: 25px; margin: 0;"> </p>
-<p style="font-size: 14px; line-height: 1.8; word-break: break-word; text-align: center; mso-line-height-alt: 25px; margin: 0;">TUNGGU INFO SELANJUTNYA DARI KAMI </p>
+<p style="font-size: 14px; line-height: 1.8; word-break: break-word; text-align: center; mso-line-height-alt: 25px; margin: 0;">TUNGGU INFO SELANJUTNYA DARI KAMI <br>JIKA ADA BERKAS YANG BELUM LENGKAP,<br>SILAHKAN MENGHUBUNGI ADMIN</p>
 
 </div>
 </div>

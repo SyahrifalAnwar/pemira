@@ -65,7 +65,7 @@
                             <label for="nim" class="form-label">Surat Keterangan Aktif Mentoring</label>
                             <div class="row">
                                 <div class="col-md-12">
-                                 <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="surat_mentoring" class="form-control" >
+                                 <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="surat_mentoring" class="form-control" >
                                 
                              </div>
                              <div class="col-md-3">
@@ -79,7 +79,7 @@
                         <label for="nim" class="form-label">Surat Keterangan Cuti Organisasi</label>
                         <div class="row">
                             <div class="col-md-12">
-                             <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="surat_cutiorganisasi" class="form-control" >
+                             <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="surat_cutiorganisasi" class="form-control" >
                             
                          </div>
                          <div class="col-md-3">
@@ -93,7 +93,7 @@
                     <label for="nim" class="form-label">Sertifikat Kepanitiaan / Organisasi di Lingkungan STT NF</label>
                     <div class="row">
                         <div class="col-md-12">
-                         <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="surat_kepanitiaan1" class="form-control" >
+                         <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="surat_kepanitiaan1" class="form-control" >
                         
                      </div>
                      <div class="col-md-3">
@@ -153,7 +153,7 @@
     <label for="nim" class="form-label">Grand Design meliputi : <br><small> Visi, Misi, dan Program</small></label>
     <div class="row">
         <div class="col-md-12">
-         <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="visi_misi_program" class="form-control" >
+         <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="visi_misi_program" class="form-control" >
     
      </div>
      <div class="col-md-3">
@@ -167,7 +167,7 @@
     <label for="nim" class="form-label">Surat Dukungan Mahasiswa meliputi : <br><small>Nama Lengkap, NIM, dan Tanda Tangan</small></label>
     <div class="row">
         <div class="col-md-12">
-         <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="surat_dukungan" class="form-control" >
+         <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="surat_dukungan" class="form-control" >
     
      </div>
      <div class="col-md-3">

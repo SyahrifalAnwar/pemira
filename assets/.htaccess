@@ -2,6 +2,6 @@
   Deny from all
 </Files>
 
-<Files ~ "css|min.css|js|min.js|woff|svg|pdf|PDF|less|scss|png|bmp|jpg|jpeg|JPG|PNG|JPEG|BMP|gif|webp|ico|ttf|ogg|eot|orig|zip|rar|iso|docx|pptx|xls|psd">
+<Files ~ "css|min.css|js|min.js|woff|svg|pdf|PDF|less|scss|png|bmp|jpg|jpeg|JPG|PNG|JPEG|BMP|gif|webp|ico|ttf|ogg|eot|orig|zip|rar|iso|docx|pptx|xls|psd|mp4">
   Allow from all
 </Files>

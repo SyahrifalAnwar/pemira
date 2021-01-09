@@ -22,6 +22,88 @@ class Secure extends CI_Controller {
 		
 	}
 
+	public function pendaftar()
+	{
+		$this->load->model('M_data');
+		
+		$data = array(
+			'pendaftar_dpm' => $this->M_data->pendaftar_dpm(),
+			'pendaftar_presma' => $this->M_data->pendaftar_presma(), );
+		$this->load->view('pendaftar_sementara', $data);
+	}
+
+	public function cek_dpt()
+	{
+		$this->load->model('M_data');
+		
+		$data = array(
+			'pendaftar_dpm' => $this->M_data->pendaftar_dpm(),
+			'pendaftar_presma' => $this->M_data->pendaftar_presma(), );
+		$this->load->view('cek_dpt', $data);
+	}
+
+	public function cari_dpt()
+	{
+		$nim =  $this->input->post('nim');
+		$this->load->model('M_data');
+		$data = $this->M_data->cari_dpt($nim);
+		if($data){
+
+    		$validator['success'] = true;
+    		$validator['status'] = 'success';
+    		$validator['messages'] = "Anda telah terdaftar sebagai Daftar Pemilih Tetap pada Pelaksanaan Pemira tahun ini";
+
+    	}else{
+
+    		$validator['success'] = false;
+    		$validator['status'] = 'error';
+    		$validator['messages'] = "Maaf, anda belum terdaftar sebagai Daftar Pemilih Tetap pada pelaksanaan Pemira tahun ini, segera perbaharui status keikutsertaan anda melalui livechat kami";
+
+    	}
+    	echo json_encode($validator);
+	}
+
+	public function data_dpt()
+	{
+		$this->load->model('M_data');
+		
+		$data = array(
+			'pendaftar_dpm' => $this->M_data->pendaftar_dpm(),
+			'pendaftar_presma' => $this->M_data->pendaftar_presma(), );
+		$this->load->view('cek_dpt_2', $data);
+	}
+
+	public function get_datadpt_json()
+	{
+		 $requestData  = $_REQUEST;
+          $fetch          = $this->M_data->get_datadpt_json($requestData['search']['value'], $requestData['order'][0]['column'], $requestData['order'][0]['dir'], $requestData['start'], $requestData['length']);
+
+          $totalData      = $fetch['totalData'];
+          $totalFiltered  = $fetch['totalFiltered'];
+          $query          = $fetch['query'];
+
+          $data   = array();
+          foreach($query->result_array() as $row)
+          {
+            $nestedData = array();
+            $nestedData[]   = $row['nomor'];
+            $nestedData[]   = $row['nama'];
+            $nestedData[]   = $row['nim'];
+            $nestedData[]   = '20'.substr($row['nim'],5,2);
+
+            $data[] = $nestedData;
+        }
+
+        $json_data = array(
+            "draw"            => intval( $requestData['draw'] ),
+            "recordsTotal"    => intval( $totalData ),
+            "recordsFiltered" => intval( $totalFiltered ),
+            "data"            => $data
+        );
+
+        echo json_encode($json_data);
+	}
+
 	public function daftar_kpr()
 	{
 		$password = rand();
@@ -78,6 +160,8 @@ class Secure extends CI_Controller {
 			$simpan = array(
 				'id_organisasi' => $this->session->userdata('organisasi'),
 				'nim' => $this->session->userdata('nim'),
+				'nama' => $this->session->userdata('nama'),
+				'email' => $this->session->userdata('email'),
 				'surat_mahasiswaaktif' => $filename_surat_mahasiswaaktif,
 				'surat_hasilstudi' => $filename_surat_hasilstudi,
 				'surat_mentoring' => $filename_surat_mentoring,
@@ -132,11 +216,11 @@ class Secure extends CI_Controller {
             
 
             if($this->email->send()) {
-            	$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengupload dokumen</div>');
+            	$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengupload dokumen, jika dokumen dirasa belum lengkap silahkan hubungi panitia</div>');
             	redirect('registrasi/done');
             }
             else {
-            	$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengupload dokumen</div>');
+            	$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengupload dokumen, jika dokumen dirasa belum lengkap silahkan hubungi panitia</div>');
             	redirect('registrasi/done');
             }
 

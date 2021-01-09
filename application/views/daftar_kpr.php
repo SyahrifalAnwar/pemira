@@ -20,7 +20,7 @@ background-attachment: fixed;">
 
 
 <section class="bg-account-pages vh-100 align-items-center bg-center position-relative">
-    <div class="container">
+    <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6 col-xl-6">
                 <div class="bg-white shadow">

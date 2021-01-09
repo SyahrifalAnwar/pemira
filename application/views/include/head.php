@@ -11,4 +11,5 @@
 	<link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?php echo base_url() ?>assets/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?php echo base_url() ?>assets/css/style.min.css" rel="stylesheet" type="text/css" />
+	
 </head>

@@ -16,15 +16,20 @@
 					<a href="<?php echo base_url() ?>" class="nav-link active">Home</a>
 				</li>
 				<li class="nav-item">
-					<a href="<?php echo base_url('agenda_kegiatan') ?>" class="nav-link">Agenda & Kegiatan</a>
+					<a href="<?php echo base_url('cek_dpt') ?>" class="nav-link">Cek DPT</a>
+				</li> 
+				
+				<li class="nav-item">
+					<a href="<?php echo base_url('agenda_kegiatan') ?>" class="nav-link">Timeline</a>
 				</li>
+				<li class="nav-item">
+					<a href="<?php echo base_url('pendaftar') ?>" class="nav-link">Pendaftar Sementara</a>
+				</li> 
 				<!-- 
 				<li class="nav-item">
 					<a href="<?php echo base_url('quick_count') ?>" class="nav-link">Real Count</a>
-				</li>
-				<li class="nav-item">
-					<a href="<?php echo base_url('kandidat') ?>" class="nav-link">Kandidat</a>
-				</li> -->
+				</li>-->
+				
 				
 			</ul>
 			<a href="<?php echo base_url('secure/login') ?>" class="btn btn-sm rounded-pill nav-btn ms-lg-3">Login</a>
