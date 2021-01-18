@@ -6,17 +6,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!DOCTYPE html>
 <html lang="en">
 <?php $this->load->view('include/head') ?>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5ff6af1bc31c9117cb6c36e1/1erdpo151';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<!--Start of Tawk.to Script-->
+	<script type="text/javascript">
+	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+	(function(){
+		var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+		s1.async=true;
+		s1.src='https://embed.tawk.to/5ff6af1bc31c9117cb6c36e1/1erdpo151';
+		s1.charset='UTF-8';
+		s1.setAttribute('crossorigin','*');
+		s0.parentNode.insertBefore(s1,s0);
+	})();
 </script>
 <!--End of Tawk.to Script-->
 <body data-spy="scroll" data-target="#navbar" data-offset="20">
@@ -34,8 +36,9 @@ s0.parentNode.insertBefore(s1,s0);
 
 	<?php $this->load->view('include/navbar') ?>
 
-	<!-- Hero Start -->
-	<section class="hero-1 bg-center bg-primary position-relative" style="background-image: url('<?php echo base_url() ?>assets/images/hero-1-bg.png');"
+	<div>
+		<!-- Hero Start -->
+	<section 	class="hero-1 bg-center bg-primary position-relative" style="background-image: url('<?php echo base_url() ?>assets/images/hero-1-bg.png');"
 		id="home">
 		<div class="container">
 			<div class="row align-items-center hero-content">
@@ -43,7 +46,7 @@ s0.parentNode.insertBefore(s1,s0);
 					<h1 class="text-white display-4 font-weight-semibold mb-4 hero-1-title">E-PEMIRA STTNF 2020-2021</h1>
 					<p class="text-white-70 mb-4  mb-lg-5">Pemilihan raya Online STT Terpadu Nurul Fikri 2020-2021</p>
 					<a href="<?php echo base_url('secure/login') ?>" class="btn btn-lg btn-light rounded-pill me-2">Mulai Voting</a>
-					<div class="d-inline-block" data-bs-toggle="modal" data-bs-target="#watchvideomodal">
+					<div class="d-inline-block magic-hover magic-hover__square " data-bs-toggle="modal" data-bs-target="#watchvideomodal">
 						<a href="javascript: void(0);" class="video-play-icon text-white">
 							<span class="play-icon-circle me-2"><i class="icon-sm icon" data-feather="play"></i></span>
 							<span class="">Apa itu pemira ?</span>
@@ -52,7 +55,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 
 				</div>
-				<div class="col-lg-6 col-sm-10 mx-auto ms-lg-auto me-lg-0">
+				<div data-aos="fade-down" class="blu col-lg-6 col-sm-10 mx-auto ms-lg-auto me-lg-0">
 					<div class="mt-lg-0 mt-4">
 						<img src="<?php echo base_url() ?>assets/images/logo.png" style="width: 100%" alt="" class="img-md-responsive" />
 					</div>
@@ -103,7 +106,7 @@ s0.parentNode.insertBefore(s1,s0);
 					<div class="row">
 						<div class="col-lg-3">
 							<div class="service-box text-center px-4 py-5 position-relative mb-4">
-								<div class="service-box-content p-4">
+								<div data-aos="fade-right" class="service-box-content p-4">
 									<div class="icon-mono service-icon avatar-md mx-auto mb-4">
 										<i class="" data-feather="log-in"></i>
 									</div>
@@ -114,12 +117,12 @@ s0.parentNode.insertBefore(s1,s0);
 						</div>
 						<div class="col-lg-3">
 							<div class="service-box text-center px-4 py-5 position-relative mb-4">
-								<div class="service-box-content p-4">
+								<div data-aos="fade-right" class="service-box-content p-4">
 									<div class="icon-mono service-icon avatar-md mx-auto mb-4">
 										<i class="" data-feather="log-in"></i>
 									</div>
 									<h4 class="mb-3 font-size-22">Login</h4>
-									<p class="text-muted mb-0">Login menggunakan akun yang sudah diberikan</p>
+									<p class="text-muted mb-0">Login menggunakan akun yang sudah diberikan via email</p>
 								</div>
 							</div>
 						</div>
@@ -127,7 +130,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 						<div class="col-lg-3">
 							<div class="service-box text-center px-4 py-5 position-relative mb-4">
-								<div class="service-box-content p-4">
+								<div data-aos="fade-left" class="service-box-content p-4">
 									<div class="icon-mono service-icon avatar-md mx-auto mb-4">
 										<i class="" data-feather="user-check"></i>
 									</div>
@@ -140,7 +143,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 						<div class="col-lg-3">
 							<div class="service-box text-center px-4 py-5 position-relative mb-4">
-								<div class="service-box-content p-4">
+								<div data-aos="fade-left" class="service-box-content p-4">
 									<div class="icon-mono service-icon avatar-md mx-auto mb-4">
 										<i class="" data-feather="server"></i>
 									</div>
@@ -168,7 +171,7 @@ s0.parentNode.insertBefore(s1,s0);
 						</div>
 					</div>
 
-					<div class="row align-items-center mb-5">
+					<div data-aos="fade-down" class="row align-items-center mb-5">
 						<div class="col-md-5 order-2 order-md-1 mt-md-0 mt-5">
 							<p class="text-muted mb-5">
 								<ul>
@@ -259,23 +262,28 @@ s0.parentNode.insertBefore(s1,s0);
 								info@nurulfikri.ac.id</p>
 								<p class="text-muted mb-3"><i class="me-2 text-muted icon icon-xs" data-feather="phone"></i>
 									<a href="https://wa.me/6285382932485">+62 853-8293-2485</a></p>
-								<p class="text-muted mb-3"><i class="me-2 text-muted icon icon-xs" data-feather="map-pin"></i>
-								Jl. Raya Lenteng Agung No.20, RT.4/RW.1, Srengseng Sawah, Kec. Jagakarsa, Kota Jakarta Selatan, DKI Jakarta 12640</p>
-								
+									<p class="text-muted mb-3"><i class="me-2 text-muted icon icon-xs" data-feather="map-pin"></i>
+									Jl. Raya Lenteng Agung No.20, RT.4/RW.1, Srengseng Sawah, Kec. Jagakarsa, Kota Jakarta Selatan, DKI Jakarta 12640</p>
+
+								</div>
 							</div>
+							<!-- end col -->
 						</div>
-						<!-- end col -->
+						<!-- end row -->
 					</div>
-					<!-- end row -->
-				</div>
-				<!-- end container -->
-			</section>
-			<!-- Contact us end -->
+					<!-- end container -->
+				</section>
+				<!-- Contact us end -->
 
-			<?php $this->load->view('include/footer') ?>
-			<!-- feather-icons js -->
-			<?php $this->load->view('include/script') ?>
+				<?php $this->load->view('include/footer') ?>
+	</div>
+				<!-- feather-icons js -->
+				<?php $this->load->view('include/script') ?>
+				
+				<script>
+					AOS.init();
+				</script>
 
-		</body>
+			</body>
 
-		</html>
+			</html>

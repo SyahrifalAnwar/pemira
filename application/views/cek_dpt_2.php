@@ -60,6 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="row align-items-center hero-content">
 				<div class="col-lg-12 text-center">
 					<h2 class="fw-bold">Pencarian data pemilih</h2>
+					<a href="<?php echo base_url('secure/unduh_undangan') ?>" class="btn btn-primary">Unduh Undangan</a>
 				</div>
 				
 					<p id="error-msg"></p>

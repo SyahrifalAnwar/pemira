@@ -22,7 +22,7 @@
 /* 
 // variables.scss
 */
-@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap");
 /* 
 // 1. General
 */
@@ -49,7 +49,7 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Assistant", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
 }
 
@@ -201,7 +201,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: transparent !important;
   padding: 6px 0;
   margin: 0 15px;
-  font-family: "Assistant", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
 }
 

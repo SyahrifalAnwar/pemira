@@ -171,7 +171,7 @@ s0.parentNode.insertBefore(s1,s0);
 		<div class="container">
 			<div class="row align-items-center hero-content">
 				<div class="col-lg-12">
-					<h3 class="text-white display-4 font-weight-semibold mb-4 hero-1-title">AGENDA KEGIATAN</h3>
+					<h3 class="text-white text-center display-4 font-weight-semibold mb-4 hero-1-title">AGENDA KEGIATAN</h3>
 
 
 				</div>
@@ -190,51 +190,59 @@ s0.parentNode.insertBefore(s1,s0);
 
 					<div class="timeline ">
 						<div class="cl left ">
-							<div class="content bg-dark">
-								<h3 style="color: white">28 Desember 2020 - 10 Januari 2021</h3>
-								<p style="color: white">Pendaftaran + Pengumpulan Berkas</p>
+							<div class="content">
+								<h3 >28 Desember 2020 - 10 Januari 2021</h3>
+								<p>Pendaftaran + Pengumpulan Berkas</p>
+								<p>Pendaftaran diri dari Mahasiswa STTNF yang berminat untuk mencalonkan sebagai Presma & Wapresma BEM serta pencalonan anggota IM DPM, dengan mengikuti persyaratan yang telah ditetapkan.</p>
 							</div>
 						</div>
 						<div class="cl right">
 							<div class="content">
 								<h3>11 Januari 2021</h3>
 								<p>Uji Kelayakan + Sidang Verifikasi + Pengumuman</p>
+								<p>Melakukan pengujian setiap bakal calon untuk mengetahui apakah layak untuk menjadi calon Presma & Wapresma BEM atau anggota IM DPM.</p>
 							</div>
 						</div>
 						<div class="cl left">
-							<div class="content">
-								<h3>12 - 20 Januari 2021</h3>
-								<p>Masa Kampanye</p>
+							<div class="content bg-primary">
+								<h3 style="color: white">12 - 20 Januari 2021</h3>
+								<p style="color: white">Masa Kampanye</p>
+								<p style="color: white">Kampanye yang dilakukan oleh para calon untuk memperkenalkan dirinya kepada Mahasiswa.</p>
 							</div>
 						</div>
 						<div class="cl right">
 							<div class="content">
 								<h3>16 Januari 2021</h3>
 								<p>Uji Publik BEM</p>
+								<p>Melakukan pengujian kepemimpinan pada paslon BEM serta debat yang dilakukan antar paslon.</p>
 							</div>
 						</div>
 						<div class="cl left">
 							<div class="content">
 								<h3>21 Januari 2021</h3>
 								<p>Sidang Kampanye</p>
+								<p>Melakukan sidang terkait laporan kecurangan yang terjadi selama masa kampanye para calon.</p>
 							</div>
 						</div>
 						<div class="cl right">
 							<div class="content">
 								<h3>26 Januari 2021</h3>
 								<p>Musyawarah Umum DPM</p>
+								<p>Forum yang bersifat terbuka untuk menentukan anggota IM DPM, dengan pemaparan visi misi yg dibawakan calon dan dilakukan pemilihan melalui musyawarah.</p>
 							</div>
 						</div>
 						<div class="cl left">
 							<div class="content">
 								<h3>27 Januari 2021</h3>
 								<p>MUA Senada</p>
+								<p>Forum yang diselenggarakan oleh panitia dari senada yang bersifat terbuka dalam proses untuk menentukan ketua Senada. Hak suara hanya dimiliki oleh anggota aktif dari Senada.</p>
 							</div>
 						</div>
 						<div class="cl right">
 							<div class="content">
 								<h3>29 Januari 2021</h3>
 								<p>Voting</p>
+								<p>Pengambilan suara oleh mahasiswa aktif untuk memilih presma dan wapresma BEM STTNF.</p>
 							</div>
 						</div>
 </div>

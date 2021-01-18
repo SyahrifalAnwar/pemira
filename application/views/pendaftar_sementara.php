@@ -171,7 +171,7 @@ s0.parentNode.insertBefore(s1,s0);
 		<div class="container">
 			<div class="row align-items-center hero-content">
 				<div class="col-lg-12">
-					<h3 class="text-white display-4 font-weight-semibold mb-4 hero-1-title">Pendaftar Sementara</h3>
+					<h3 class="text-white text-center display-4 font-weight-semibold mb-4 hero-1-title">Pendaftar Sementara</h3>
 
 
 				</div>
@@ -193,7 +193,7 @@ s0.parentNode.insertBefore(s1,s0);
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row justify-content-center ">
                 <?php foreach ($pendaftar_dpm as $pendaftar_dpm) { ?>
                 <div class="col-lg-3 col-6">
                     <div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
@@ -223,7 +223,7 @@ s0.parentNode.insertBefore(s1,s0);
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row justify-content-center">
             	<?php foreach ($pendaftar_presma as $pendaftar_presma) { ?>
                 <div class="col-lg-3 col-6">
                     <div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">

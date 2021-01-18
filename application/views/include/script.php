@@ -6,3 +6,14 @@
 
 <!-- App Js -->
 <script src="<?php echo base_url() ?>assets/js/app.js"></script>
+<script type="text/javascript">
+					options = {
+  "cursorOuter": "circle-basic",
+  "hoverEffect": "circle-move",
+  "hoverItemMove": false,
+  "defaultCursor": true,
+  "outerWidth": 41,
+  "outerHeight": 41
+}; 
+ magicMouse(options);
+				</script>

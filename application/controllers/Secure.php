@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
 class Secure extends CI_Controller {
 
 	public function index($value='')
@@ -39,6 +40,18 @@ class Secure extends CI_Controller {
 		$data = array(
 			'pendaftar_dpm' => $this->M_data->pendaftar_dpm(),
 			'pendaftar_presma' => $this->M_data->pendaftar_presma(), );
+		#$this->load->view('cek_dpt', $data);
+		$this->load->view('cek_dpt_2', $data);
+	}
+
+	public function unduh_undangan()
+	{
+		$this->load->model('M_data');
+		
+		$data = array(
+			'pendaftar_dpm' => $this->M_data->pendaftar_dpm(),
+			'pendaftar_presma' => $this->M_data->pendaftar_presma(), );
+		#$this->load->view('cek_dpt', $data);
 		$this->load->view('cek_dpt', $data);
 	}
 
@@ -62,6 +75,32 @@ class Secure extends CI_Controller {
     	}
     	echo json_encode($validator);
 	}
+
+    public function surat_undangan()
+    {
+        $this->load->library('pdf');
+        $this->load->model('M_data');
+
+        $nim = $this->input->get('nim');
+        
+        $data['nim'] = $nim;
+        $data['nama'] = $this->M_data->cari_dpt($nim)[0]['nama'];
+
+        $output = $this->load->view('template_undangan', $data, true);
+
+        $this->pdf->generate($output, "Surat_Undangan_".str_replace(' ', '-', $data['nama']), true, "A4", "landscape");
+    }
+
+    public function nomor_urut()
+    {
+        /* Validasi user */
+        /* End validasi user */
+
+        $data = array(
+			'pendaftar_dpm' => $this->M_data->pendaftar_dpm_random(),
+			'limit' => 2, );
+        $this->load->view('pemilihan_nomor', $data);
+    }
 
 	public function data_dpt()
 	{

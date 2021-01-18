@@ -114,7 +114,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							Swal.fire({
 								icon: 'success',
 								title: 'Berhasil',
-								text: response.messages
+								text: response.messages,
+								confirmButtonText: 'Surat Undangan',
+								cancelButtonText: 'Tutup',
+								showCancelButton: true,
+								showCloseButton: false,
+								showLoaderOnConfirm: true,
+								preConfirm: function() {
+									return new Promise(function(resolve) {
+										setTimeout(function() {
+											resolve()
+										}, 1000)
+									})
+								}
+							}).then((result) => {
+								if (result.isConfirmed) {
+									location.href = "<?=site_url('secure/surat_undangan')?>?nim=" + $('#subject').val()
+									Swal.fire({
+										icon: 'success',
+										title: 'Berhasil',
+										text: 'Surat Undangan Berhasil di Unduh'
+									})
+								}
 							})
 						}
 						else {

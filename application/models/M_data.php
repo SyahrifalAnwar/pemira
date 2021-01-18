@@ -91,6 +91,13 @@ class M_data extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function pendaftar_dpm_random($value='')
+	{
+		$sql = "SELECT * FROM `dokumen_dpm` ORDER BY RAND()";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+
 	public function get_organisasi()
 	{
 		$sql = "SELECT * FROM `organisasi`
