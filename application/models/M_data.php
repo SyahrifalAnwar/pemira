@@ -18,6 +18,27 @@ class M_data extends CI_Model {
 
 	}
 
+	public function count_peserta()
+	{
+		$sql = "SELECT count(nim) as count_peserta FROM `pemilih` WHERE id_level = 3";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+
+	public function kandidat_dpm()
+	{
+		$sql = "SELECT count(nim) as kandidat_dpm FROM `dokumen_dpm`";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+
+	public function kandidat_bem()
+	{
+		$sql = "SELECT count(ketua_nim) as kandidat_bem FROM `dokumen_presma`";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+
 	public function get_datadpt_json($like_value = NULL, $column_order = NULL, $column_dir = NULL, $limit_start = NULL, $limit_length = NULL)
 	{
 		$id_wt = $this->session->userdata('id_wt');
@@ -64,6 +85,13 @@ class M_data extends CI_Model {
 	{
 		
 		$sql = "SELECT `nama` FROM `pemilih` WHERE `nim` = '$nim'";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+
+	public function detail_dpm($id_kandidat='')
+	{
+		$sql = "SELECT * FROM `dokumen_dpm` WHERE `nim` = '$id_kandidat'";
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}

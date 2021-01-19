@@ -1,126 +1,172 @@
 
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PEMIRA STTNF 2020-2021</title>
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/fontawesome-free/css/all.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/dist/css/adminlte.min.css">
-</head>
-<body class="hold-transition layout-top-nav">
-  <div class="wrapper">
-    <?php foreach ($datauser as $datauser) {} ?>
-    <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
-      <div class="container">
-        <a href="<?php echo base_url() ?>assets/index3.html" class="navbar-brand">
-          <img src="<?php echo base_url() ?>assets/images/logo.png" alt="AdminLTE Logo" class="brand-image">
-          <span class="brand-text font-weight-light">PEMIRA 2020-2021</span>
-        </a>
+    <?php $this->load->view('admin_include/head') ?>
 
-        <!-- Right navbar links -->
-        <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
 
-          <!-- Notifications Dropdown Menu -->
-          <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
-              <i class="far fa-user"></i> <?php echo $datauser['nama'] ?>
-            </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-              <span class="dropdown-header"><?php echo $datauser['nim'] ?></span>
-              <div class="dropdown-divider"></div>
-              <a onclick="prompt('Apa yakin ingin keluar ?')" href="<?php echo base_url('secure/logout') ?>" class="dropdown-item dropdown-footer bg-danger"><strong>LOGOUT</strong></a>
+    <body class="fixed-left">
+
+        <!-- Loader -->
+        <div id="preloader">
+            <div id="status">
+                <div class="spinner"></div>
             </div>
-          </li>
+        </div>
 
-        </ul>
-      </div>
-    </nav>
-    <!-- /.navbar -->
+        <!-- Begin page -->
+        <div id="wrapper">
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-      <!-- Content Header (Page header) -->
-      <div class="content-header">
-        <div class="container">
-          <div class="row mb-2">
-            <div class="col-sm-12">
-              <h1 class="m-0"> VOTE</h1>
-            </div><!-- /.col -->
+            <!-- ========== Left Sidebar Start ========== -->
+           
+            <!-- Left Sidebar End -->
+                <?php $this->load->view('admin_include/menu') ?>
+            <!-- Start right Content here -->
 
-          </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </div>
-      <!-- /.content-header -->
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
 
-      <!-- Main content -->
-      <div class="content">
-        <div class="container">
-          <div class="row">
-            <?php foreach ($get_organisasi as $get_organisasi) {?>
-            <div class="col-lg-4">
-              <div class="card">
-                <div class="card-body">
+                    <!-- Top Bar Start -->
+                    <?php $this->load->view('admin_include/topbar') ?>
+                    <!-- Top Bar End -->
 
-                  <p class="card-text">
-                   <img style="width: 100%" src="<?php echo $get_organisasi['logo'] ?>">
-                  </p>
+                    <div class="page-content-wrapper dashborad-v">
 
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="page-title-box">
+                                        <div class="btn-group float-right">
+                                            <ol class="breadcrumb hide-phone p-0 m-0">
+                                                <li class="breadcrumb-item"><a href="#">KPR STTNF</a></li>
+                                                <li class="breadcrumb-item active">Dashboard</li>
+                                            </ol>
+                                        </div>
+                                        <h4 class="page-title">Dashboard</h4>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <!-- end page title end breadcrumb -->
+                            <div class="row">
+                                <!-- Column -->
+                                <div class="col-sm-12 col-md-6 col-xl-3">
+                                    <div class="card bg-danger m-b-30">
+                                        <div class="card-body">
+                                            <div class="d-flex row">
+                                                <div class="col-3 align-self-center">
+                                                    <div class="round">
+                                                        <i class="mdi mdi-google-physical-web"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col-8 ml-auto align-self-center text-center">
+                                                    <div class="m-l-10 text-white float-right">
+                                                        <h5 class="mt-0 round-inner"><?php foreach ($count_peserta as $key => $count_peserta) {
+                                                            echo $count_peserta['count_peserta'];
+                                                        } ?></h5>
+                                                        <p class="mb-0 ">Peserta Voting</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Column -->
+                                <!-- Column -->
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                                    <div class="card bg-info m-b-30">
+                                        <div class="card-body">
+                                            <div class="d-flex row">
+                                                <div class="col-3 align-self-center">
+                                                    <div class="round">
+                                                        <i class="mdi mdi-account-multiple"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col-8 text-center ml-auto align-self-center">
+                                                    <div class="m-l-10 text-white float-right">
+                                                        <h5 class="mt-0 round-inner"><?php foreach ($kandidat_dpm as $key => $kandidat_dpm) {
+                                                            echo $kandidat_dpm['kandidat_dpm'];
+                                                        } ?></h5>
+                                                        <p class="mb-0 ">Kandidat DPM</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Column -->
+                                <!-- Column -->
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                                    <div class="card bg-success m-b-30">
+                                        <div class="card-body">
+                                            <div class="d-flex row">
+                                                <div class="col-3 align-self-center">
+                                                    <div class="round ">
+                                                        <i class="mdi mdi-account-multiple"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col-8 ml-auto align-self-center text-center">
+                                                    <div class="m-l-10 text-white float-right">
+                                                       <h5 class="mt-0 round-inner"><?php foreach ($kandidat_bem as $key => $kandidat_bem) {
+                                                            echo $kandidat_bem['kandidat_bem'];
+                                                        } ?></h5>
+                                                        <p class="mb-0 ">Kandidat BEM</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Column -->
+                                <!-- Column -->
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                                    <div class="card bg-primary m-b-30">
+                                        <div class="card-body">
+                                            <div class="d-flex row">
+                                                <div class="col-3 align-self-center">
+                                                    <div class="round">
+                                                        <i class="mdi mdi-calculator"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col-8 ml-auto align-self-center text-center">
+                                                    <div class="m-l-10 text-white float-right">
+                                                        <h5 class="mt-0 round-inner">$32874</h5>
+                                                        <p class="mb-0">Total Sales</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Column -->
+                            </div>
+
+                       
+
+                        </div>
+                        <!-- container -->
+
+                    </div>
+                    <!-- Page content Wrapper -->
                 </div>
-              </div>
+                <!-- content -->
+
+                <footer class="footer">
+                    © <?= date('Y') ?> KPR STT TERPADU NURUL FIKRI
+                </footer>
 
             </div>
-          <?php } ?>
-            <!-- /.col-md-6 -->
-          </div>
-          <!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </div>
-      <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
+            <!-- End Right content here -->
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-      <div class="p-3">
-        <h5>Title</h5>
-        <p>Sidebar content</p>
-      </div>
-    </aside>
-    <!-- /.control-sidebar -->
+        </div>
+        <!-- END wrapper -->
 
-    <!-- Main Footer -->
-    <footer class="main-footer">
-      <!-- To the right -->
-      <div class="float-right d-none d-sm-inline">
-        Anything you want
-      </div>
-      <!-- Default to the left -->
-      <strong> &copy; 2020-2021 <a href="https://adminlte.io">PEMIRA</a>.</strong> STT Terpadu Nurul Fikri
-    </footer>
-  </div>
-  <!-- ./wrapper -->
+        <?php $this->load->view('admin_include/script') ?>
 
-  <!-- REQUIRED SCRIPTS -->
+       
+       
+    </body>
 
-  <!-- jQuery -->
-  <script src="<?php echo base_url() ?>assets/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="<?php echo base_url() ?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="<?php echo base_url() ?>assets/dist/js/adminlte.min.js"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="<?php echo base_url() ?>assets/dist/js/demo.js"></script>
-</body>
 </html>

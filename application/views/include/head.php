@@ -14,6 +14,6 @@
 	<link href="<?php echo base_url() ?>assets/css/style.min.css" rel="stylesheet" type="text/css" />
 
 <script type="text/javascript" src="<?php echo base_url('assets/magic-mouse-js-master/js/magic_mouse.js') ?>"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>assets/magic-mouse-js-master/js/run_prettify.js"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/magic-mouse-js-master/js/run_prettify.js') ?>"></script>
 	
 </head>

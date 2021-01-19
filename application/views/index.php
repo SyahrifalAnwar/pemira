@@ -106,7 +106,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="row">
 						<div class="col-lg-3">
 							<div class="service-box text-center px-4 py-5 position-relative mb-4">
-								<div data-aos="fade-right" class="service-box-content p-4">
+								<div data-aos="fade-down" class="service-box-content p-4">
 									<div class="icon-mono service-icon avatar-md mx-auto mb-4">
 										<i class="" data-feather="log-in"></i>
 									</div>
@@ -117,7 +117,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</div>
 						<div class="col-lg-3">
 							<div class="service-box text-center px-4 py-5 position-relative mb-4">
-								<div data-aos="fade-right" class="service-box-content p-4">
+								<div data-aos="fade-down" class="service-box-content p-4">
 									<div class="icon-mono service-icon avatar-md mx-auto mb-4">
 										<i class="" data-feather="log-in"></i>
 									</div>
@@ -130,7 +130,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 						<div class="col-lg-3">
 							<div class="service-box text-center px-4 py-5 position-relative mb-4">
-								<div data-aos="fade-left" class="service-box-content p-4">
+								<div data-aos="fade-down" class="service-box-content p-4">
 									<div class="icon-mono service-icon avatar-md mx-auto mb-4">
 										<i class="" data-feather="user-check"></i>
 									</div>
@@ -143,7 +143,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 						<div class="col-lg-3">
 							<div class="service-box text-center px-4 py-5 position-relative mb-4">
-								<div data-aos="fade-left" class="service-box-content p-4">
+								<div data-aos="fade-down" class="service-box-content p-4">
 									<div class="icon-mono service-icon avatar-md mx-auto mb-4">
 										<i class="" data-feather="server"></i>
 									</div>

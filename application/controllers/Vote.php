@@ -24,10 +24,4 @@ class Vote extends CI_Controller {
 		}
 		
 	}
-
-	public function kelompok()
-	{ 
-		$id_organisasi = $this->uri->segment(3);
-		echo $id_organisasi;
-	}
 }
