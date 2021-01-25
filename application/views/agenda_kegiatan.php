@@ -8,15 +8,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php $this->load->view('include/head') ?>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5ff6af1bc31c9117cb6c36e1/1erdpo151';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+	(function(){
+		var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+		s1.async=true;
+		s1.src='https://embed.tawk.to/5ff6af1bc31c9117cb6c36e1/1erdpo151';
+		s1.charset='UTF-8';
+		s1.setAttribute('crossorigin','*');
+		s0.parentNode.insertBefore(s1,s0);
+	})();
 </script>
 <!--End of Tawk.to Script-->
 <style>
@@ -172,89 +172,105 @@ s0.parentNode.insertBefore(s1,s0);
 			<div class="row align-items-center hero-content">
 				<div class="col-lg-12">
 					<h3 class="text-white text-center display-4 font-weight-semibold mb-4 hero-1-title">AGENDA KEGIATAN</h3>
-
+					<p class="text-white text-center font-weight-semibold mb-4 hero-2-title" id="demo"></p>
 
 				</div>
 			</div>
 			<!-- end row -->
 
-		
-			</div>
-			<!-- end hero shape -->
-		</section>
-	<!-- Hero End -->
 
-	<!-- Team start -->
-	<section class="section bg-light" id="team">
-
-
-					<div class="timeline ">
-						<div class="cl left ">
-							<div class="content">
-								<h3 >28 Desember 2020 - 10 Januari 2021</h3>
-								<p>Pendaftaran + Pengumpulan Berkas</p>
-								<p>Pendaftaran diri dari Mahasiswa STTNF yang berminat untuk mencalonkan sebagai Presma & Wapresma BEM serta pencalonan anggota IM DPM, dengan mengikuti persyaratan yang telah ditetapkan.</p>
-							</div>
-						</div>
-						<div class="cl right">
-							<div class="content">
-								<h3>11 Januari 2021</h3>
-								<p>Uji Kelayakan + Sidang Verifikasi + Pengumuman</p>
-								<p>Melakukan pengujian setiap bakal calon untuk mengetahui apakah layak untuk menjadi calon Presma & Wapresma BEM atau anggota IM DPM.</p>
-							</div>
-						</div>
-						<div class="cl left">
-							<div class="content bg-primary">
-								<h3 style="color: white">12 - 20 Januari 2021</h3>
-								<p style="color: white">Masa Kampanye</p>
-								<p style="color: white">Kampanye yang dilakukan oleh para calon untuk memperkenalkan dirinya kepada Mahasiswa.</p>
-							</div>
-						</div>
-						<div class="cl right">
-							<div class="content">
-								<h3>16 Januari 2021</h3>
-								<p>Uji Publik BEM</p>
-								<p>Melakukan pengujian kepemimpinan pada paslon BEM serta debat yang dilakukan antar paslon.</p>
-							</div>
-						</div>
-						<div class="cl left">
-							<div class="content">
-								<h3>21 Januari 2021</h3>
-								<p>Sidang Kampanye</p>
-								<p>Melakukan sidang terkait laporan kecurangan yang terjadi selama masa kampanye para calon.</p>
-							</div>
-						</div>
-						<div class="cl right">
-							<div class="content">
-								<h3>26 Januari 2021</h3>
-								<p>Musyawarah Umum DPM</p>
-								<p>Forum yang bersifat terbuka untuk menentukan anggota IM DPM, dengan pemaparan visi misi yg dibawakan calon dan dilakukan pemilihan melalui musyawarah.</p>
-							</div>
-						</div>
-						<div class="cl left">
-							<div class="content">
-								<h3>27 Januari 2021</h3>
-								<p>MUA Senada</p>
-								<p>Forum yang diselenggarakan oleh panitia dari senada yang bersifat terbuka dalam proses untuk menentukan ketua Senada. Hak suara hanya dimiliki oleh anggota aktif dari Senada.</p>
-							</div>
-						</div>
-						<div class="cl right">
-							<div class="content">
-								<h3>29 Januari 2021</h3>
-								<p>Voting</p>
-								<p>Pengambilan suara oleh mahasiswa aktif untuk memilih presma dan wapresma BEM STTNF.</p>
-							</div>
-						</div>
-</div>
-
-
+		</div>
+		<!-- end hero shape -->
 	</section>
-	<!-- Team end -->
+	<!-- Hero End -->
+	<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 26, 2021 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + " Hari " + hours + " Jam "
+  + minutes + " Menit " + seconds + " Detik " + "<br>Menuju Musyawarah Umum DPM";
+
+  // If the count down is over, write some text 
+  if (distance < 0) {
+  	clearInterval(x);
+  	document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+<!-- Team start -->
+<section class="section bg-light" id="team">
 
 
-	<?php $this->load->view('include/footer') ?>
-	<!-- feather-icons js -->
-	<?php $this->load->view('include/script') ?>
+	<div class="timeline ">
+		<div class="cl left ">
+			<div class="content">
+				<h3 >28 Desember 2020 - 10 Januari 2021</h3>
+				<p>Pendaftaran + Pengumpulan Berkas</p>
+				<p>Pendaftaran diri dari Mahasiswa STTNF yang berminat untuk mencalonkan sebagai Presma & Wapresma BEM serta pencalonan anggota IM DPM, dengan mengikuti persyaratan yang telah ditetapkan.</p>
+			</div>
+		</div>
+		<div class="cl right">
+			<div class="content">
+				<h3>14 Januari 2021</h3>
+				<p>Uji Kelayakan + Sidang Verifikasi + Pengumuman</p>
+				<p>Melakukan pengujian setiap bakal calon untuk mengetahui apakah layak untuk menjadi calon Presma & Wapresma BEM atau anggota IM DPM.</p>
+			</div>
+		</div>
+
+		<div class="cl left">
+			<div class="content">
+				<h3>16 Januari 2021</h3>
+				<p>Uji Publik BEM</p>
+				<p>Melakukan pengujian kepemimpinan pada paslon BEM serta debat yang dilakukan antar paslon.</p>
+			</div>
+		</div>
+		<div class="cl right">
+			<div class="content">
+				<h3>26 Januari 2021</h3>
+				<p>Musyawarah Umum DPM</p>
+				<p>Forum yang bersifat terbuka untuk menentukan anggota IM DPM, dengan pemaparan visi misi yg dibawakan calon dan dilakukan pemilihan melalui musyawarah.</p>
+			</div>
+		</div>
+		<div class="cl left">
+			<div class="content">
+				<h3>28 Januari 2021</h3>
+				<p>MUA Senada</p>
+				<p>Forum yang diselenggarakan oleh panitia dari senada yang bersifat terbuka dalam proses untuk menentukan ketua Senada. Hak suara hanya dimiliki oleh anggota aktif dari Senada.</p>
+			</div>
+		</div>
+		<div class="cl right">
+			<div class="content">
+				<h3>29 Januari 2021</h3>
+				<p>Voting</p>
+				<p>Pengambilan suara oleh mahasiswa aktif untuk memilih presma dan wapresma BEM STTNF.</p>
+			</div>
+		</div>
+	</div>
+
+
+</section>
+<!-- Team end -->
+
+
+<?php $this->load->view('include/footer') ?>
+<!-- feather-icons js -->
+<?php $this->load->view('include/script') ?>
 
 </body>
 

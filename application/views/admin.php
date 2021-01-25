@@ -127,13 +127,13 @@
                                             <div class="d-flex row">
                                                 <div class="col-3 align-self-center">
                                                     <div class="round">
-                                                        <i class="mdi mdi-calculator"></i>
+                                                        <i class="mdi mdi-account-multiple"></i>
                                                     </div>
                                                 </div>
                                                 <div class="col-8 ml-auto align-self-center text-center">
                                                     <div class="m-l-10 text-white float-right">
-                                                        <h5 class="mt-0 round-inner">$32874</h5>
-                                                        <p class="mb-0">Total Sales</p>
+                                                        <h5 class="mt-0 round-inner">2</h5>
+                                                        <p class="mb-0">Kandidat Senada</p>
                                                     </div>
                                                 </div>
                                             </div>

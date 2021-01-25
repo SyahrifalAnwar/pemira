@@ -23,7 +23,7 @@
 					<a href="<?php echo base_url('agenda_kegiatan') ?>" class="nav-link">Timeline</a>
 				</li>
 				<li class="nav-item magic-hover magic-hover__square">
-					<a href="<?php echo base_url('kandidat') ?>" class="nav-link">Kandidat DPM</a>
+					<a href="<?php echo base_url('kandidat') ?>" class="nav-link">Kandidat</a>
 				</li>
 				<!-- <li class="nav-item  magic-hover magic-hover__square">
 					<a href="<?php echo base_url('quick_count') ?>" class="nav-link">Real Count</a>

@@ -7,15 +7,36 @@ class M_data extends CI_Model {
 	public function checkleveluser($nim, $password){
 
 		if($nim && $password) {
-			$sql = "SELECT * FROM pemilih WHERE nim = '$nim' AND sandi = '$password' AND status = 0";
+			$sql = "SELECT * FROM pemilih WHERE nim = '$nim' AND sandi = '$password' AND status = 1";
 			$query = $this->db->query($sql);
 			$result = $query->row_array();
-			return ($query->num_rows() === 1 ? $result['id'] : false);
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
 		}
 		else {
 			return false;
 		}
 
+	}
+
+	public function save_regisulang($nim, $pass)
+	{
+		$sql = "UPDATE `pemilih` SET `status` = '1', `sandi` = '$pass' WHERE nim = '$nim'";
+		$query = $this->db->query($sql);
+		return $query;
+	}
+
+	public function upload_sk_dpm($nim, $filename_sk)
+	{
+		$sql = "UPDATE `dokumen_dpm` SET `sk` = '$filename_sk' WHERE nim = '$nim'";
+		$query = $this->db->query($sql);
+		return $query;
+	}
+
+	public function regisulang_check($nim='')
+	{
+		$sql = "SELECT * FROM pemilih WHERE nim = '$nim'";
+		$query = $this->db->query($sql);
+		return $query->result_array();
 	}
 
 	public function count_peserta()
@@ -28,6 +49,13 @@ class M_data extends CI_Model {
 	public function kandidat_dpm()
 	{
 		$sql = "SELECT count(nim) as kandidat_dpm FROM `dokumen_dpm`";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+
+	public function kandidat_dpm_detail($nim='')
+	{
+		$sql = "SELECT * FROM `dokumen_dpm` where nim = '$nim'";
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
@@ -98,7 +126,7 @@ class M_data extends CI_Model {
 
 	public function find_user($id)
 	{
-		$sql = "SELECT * FROM `pemilih` WHERE `id` = '$id'
+		$sql = "SELECT * FROM `pemilih` WHERE `nim` = '$id'
 		
 		";
 		$query = $this->db->query($sql);
@@ -118,6 +146,7 @@ class M_data extends CI_Model {
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
+
 
 	public function pendaftar_dpm_random($value='')
 	{

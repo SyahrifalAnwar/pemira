@@ -159,12 +159,12 @@
 <p style="font-size: 14px; line-height: 1.8; word-break: break-word; text-align: center; mso-line-height-alt: 25px; margin: 0;">Halo, <?php echo $this->session->userdata('nama'); ?></p>
 <p style="font-size: 14px; line-height: 1.8; word-break: break-word; text-align: center; mso-line-height-alt: 25px; margin: 0;"> </p>
 <p style="font-size: 14px; line-height: 1.8; word-break: break-word; text-align: center; mso-line-height-alt: 25px; margin: 0;">Berikut Informasi Akun Anda : </p>
+<?php foreach ($data_user as  $user_data) {} ?>
 <table>
-	<tr><td>Nama</td><td>:</td><td><?php echo $this->session->userdata('nama'); ?></td></tr>
-	<tr><td>Nim</td><td>:</td><td><?php echo $this->session->userdata('nim'); ?></td></tr>
-	<tr><td>Email</td><td>:</td><td><?php echo $this->session->userdata('email'); ?></td></tr>
-	<tr><td>Nomor Telepon</td><td>:</td><td><?php echo $this->session->userdata('no_telp'); ?></td></tr>
-	<tr><td>Password</td><td>:</td><td><?php echo $this->session->userdata('password'); ?></td></tr>
+	<tr><td>Nama</td><td>:</td><td><?php echo $user_data['nama']; ?></td></tr>
+	<tr><td>NIM</td><td>:</td><td><?php echo $user_data['nim']; ?></td></tr>
+	<tr><td>Email</td><td>:</td><td><?php echo $user_data['email'];; ?></td></tr>
+	<tr><td>Password</td><td>:</td><td><strong><?php echo $password; ?></strong></td></tr>
 </table>
 <center style="color: red;">Jangan memberikan informasi rahasia ini kepada siapapun.</center>
 <center>Silahkan Login Menggunakan Akun yang telah dibuat : <?php echo base_url('secure/login'); ?></center>

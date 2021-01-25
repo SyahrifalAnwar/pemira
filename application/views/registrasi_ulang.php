@@ -26,23 +26,20 @@
                            <a href="<?php echo base_url(); ?>">
                             <img src="<?php echo base_url() ?>assets/images/logo.png" alt="" class="logo-dark" height="150" />
                         </a>
-                        <p class="text-muted mt-2">Registrasi Ulang</p>
+                        <h3>REGISTRASI ULANG</h3>
+                        <p class="text-muted mt-2">Masukkan NIM anda untuk melakukkan registrasi Ulang</p>
                         <p><?php echo $this->session->flashdata('message'); ?></p>
                     </div>
                     <div class="p-3">
                        
-                        <form id="loginForm" action="<?php echo base_url('secure/check_login') ?>" method="POST" class="av-invalid">
+                        <form id="loginForm" action="<?php echo base_url('registrasi_ulang/regis') ?>" method="POST" class="av-invalid">
                             <div class="pesan"></div>
                             <div class="mb-3">
                                 <label for="nim" class="form-label">NIM</label>
                                 <input name="nim" required="" placeholder="Masukkan Nim anda" id="nim"
                                 type="number" class="form-control" value="" />
                             </div>
-                            <div class="mb-3">
-                                <label for="userpassword" class="form-label">Nama</label>
-                                <input name="nama" minlength="4" required="" placeholder="Masukkan nama anda"
-                                id="usernama" type="nama" class="form-control" value="" />
-                            </div>
+                            
                             <div class="d-grid mt-3"><button type="submit" class="btn btn-primary btn-none">Registrasi Ulang</button></div>
 
                         </form>
@@ -64,6 +61,43 @@
 <?php $this->load->view('include/script') ?>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-<script src="<?php echo base_url() ?>assets/js/send.js"></script>
+<script type="text/javascript">
+     $(document).ready(function(){
+  $("#loginForm").unbind('submit').bind('submit', function() {
+
+    var form = $(this);
+    var url = form.attr('action');
+    var type = form.attr('method');
+
+    $.ajax({
+      url  : url,
+      type : type,
+      data : form.serialize(),
+      dataType: 'json',
+      success:function(response) {
+        if(response.success == true) {
+           Swal.fire({
+            icon: 'success',
+            title: 'Registrasi Ulang Berhasil',
+             html:response.messages
+          })
+        }
+        else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Registrasi Ulang Gagal',
+            html: response.messages
+          })
+
+          } // /else
+        } // /if
+      });
+
+    return false;
+  });
+});
+
+
+</script>
 
 </html>

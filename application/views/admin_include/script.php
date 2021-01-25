@@ -26,3 +26,21 @@
 
  <!-- App js -->
  <script src="<?= base_url() ?>assets/assets/js/app.js"></script>
+
+ <div class="modal fade" id="GetModal" tabindex="-1" role="dialog"
+ aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-scrollable" role="document">
+ 	<div class="modal-content">
+ 		<div class="modal-header">
+ 			<h5 class="modal-title" id="ModalHeader"></h5>
+ 			<button onclick='$("#GetModal").modal("hide");' type="button" class="close btn btn-sm btn-danger"  data-dismiss="modal" aria-hidden="true">
+ 				<span aria-hidden="true">&times;</span>
+ 			</button>
+ 		</div>
+ 		<div class="modal-body" id="ModalContent">
+
+ 		</div>
+
+ 	</div>
+ </div>
+</div>

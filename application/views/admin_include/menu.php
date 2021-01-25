@@ -22,7 +22,7 @@
                             <li>
                                 <a href="<?php echo base_url('admin') ?>" class="waves-effect">
                                     <i class="mdi mdi-view-dashboard"></i>
-                                    <span> Dashboard
+                                    <span> Beranda
                                     </span>
                                 </a>
                             </li>
@@ -31,6 +31,30 @@
                                 <a href="<?php echo base_url('admin/pemilih') ?>" class="waves-effect">
                                     <i class="mdi mdi-account"></i>
                                     <span> Pemilih </span>
+                                </a>
+                            </li>
+
+                             <li>
+                                <a href="<?php echo base_url('admin/kandidat/dpm') ?>" class="waves-effect">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span> Kandidat DPM
+                                    </span>
+                                </a>
+                            </li>
+
+                             <li>
+                                <a href="<?php echo base_url('admin/kandidat/bem') ?>" class="waves-effect">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span> Kandidat BEM
+                                    </span>
+                                </a>
+                            </li>
+
+                             <li>
+                                <a href="<?php echo base_url('admin/kandidat/senada') ?>" class="waves-effect">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span> Kandidat SENADA
+                                    </span>
                                 </a>
                             </li>
 

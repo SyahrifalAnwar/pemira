@@ -14,39 +14,107 @@ class Admin extends CI_Controller {
 	{
 		$id   = $this->session->userdata('id');
 		$data = array(
-				'datauser' => $this->M_data->find_user($id),
-				'count_peserta' => $this->M_data->count_peserta(),
-				'kandidat_bem' => $this->M_data->kandidat_bem(),
-				'kandidat_dpm' => $this->M_data->kandidat_dpm()
-			);
+			'datauser' => $this->M_data->find_user($id),
+			'count_peserta' => $this->M_data->count_peserta(),
+			'kandidat_bem' => $this->M_data->kandidat_bem(),
+			'kandidat_dpm' => $this->M_data->kandidat_dpm()
+		);
 		if ($this->session->userdata('level') == 1) {
 			$this->load->view('admin', $data);
 		}else if ($this->session->userdata('level') == 2) {
-			redirect('admin/kandidat');
+			redirect('admin/base_kandidat');
 		}else if ($this->session->userdata('level') == 3) {
 			redirect('vote');
+		}else if ($this->session->userdata('level') == 4) {
+			redirect('admin/base_kandidat');
 		}else{
 			$this->load->view('login');
 		}
 		
 	}
 
-	public function kandidat($value='')
+	public function base_kandidat($value='')
 	{
 		$id   = $this->session->userdata('id');
 		$data = array(
+			'datauser' => $this->M_data->find_user($id),
+			'count_peserta' => $this->M_data->count_peserta(),
+			'kandidat_bem' => $this->M_data->kandidat_bem(),
+			'kandidat_dpm' => $this->M_data->kandidat_dpm(),
+			'kandidat_dpm_detail' => $this->M_data->kandidat_dpm_detail($id)
+		);
+		$this->load->view('admin_kandidat', $data);
+	}
+
+	public function kandidat($url='')
+	{
+		if ($this->session->userdata('level') != 1) {
+			redirect($_SERVER['HTTP_REFERER']);
+		}
+
+		$id   = $this->session->userdata('id');
+
+		if ($url == 'bem') {
+			$data = array(
+				'kandidat_bem' => $this->M_data->pendaftar_presma(),
 				'datauser' => $this->M_data->find_user($id),
 				'get_organisasi' => $this->M_data->get_organisasi()
 			);
-			$this->load->view('admin/kandidat', $data);
+			$this->load->view('admin/kandidat_bem', $data);
+		}else if ($url == 'dpm'){
+			$data = array(
+				'kandidat_dpm' => $this->M_data->pendaftar_dpm(),
+				'datauser' => $this->M_data->find_user($id),
+				'get_organisasi' => $this->M_data->get_organisasi()
+			);
+			$this->load->view('admin/kandidat_dpm', $data);
+		}else if ($url == 'senada'){
+			$data = array(
+				'datauser' => $this->M_data->find_user($id),
+				'get_organisasi' => $this->M_data->get_organisasi()
+			);
+			$this->load->view('admin/kandidat_senada', $data);
+		}
+		
+		
+	}
+
+	public function upload_sk_dpm()
+	{
+		$nim = $this->input->post('nim');
+		$sk = $_FILES["sk"]["tmp_name"];
+		$filename_sk = basename($_FILES["sk"]["name"]);
+		move_uploaded_file($sk , 'upload/'.$nim.'/'.$filename_sk);
+		$save = $this->M_data->upload_sk_dpm($nim, $filename_sk);
+		if ($save) {
+			$this->session->set_flashdata('pesan', '<div class="alert alert-primary alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><strong>Sukses!</strong> SK Berhasil di Upload</div>');
+			redirect('admin/kandidat/dpm');
+		}
+	}
+
+	public function profile_kandidat($nim='')
+	{
+		$data = array(
+			'detail_dpm' => $this->M_data->detail_dpm($nim) );
+		$this->load->view('detail_dpm', $data);
+	}
+
+	public function upload_sk($nim='')
+	{
+		$data = array('nim' => $nim );
+		$this->load->view('admin/upload_sk', $data);
 	}
 
 	public function pemilih()
 	{
+		if ($this->session->userdata('level') != 1) {
+			redirect($_SERVER['HTTP_REFERER']);
+		}
+		
 		$id   = $this->session->userdata('id');
 		$data = array(
-				'datauser' => $this->M_data->find_user($id)
-			);
+			'datauser' => $this->M_data->find_user($id)
+		);
 		$this->load->view('admin/data_pemilih', $data);
 	}
 }

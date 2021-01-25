@@ -13,8 +13,8 @@ class Secure extends CI_Controller {
 	{
 		if ($this->session->userdata('level') == 1) {
 			redirect('admin');
-		}else if ($this->session->userdata('level') == 2) {
-			redirect('admin/kandidat');
+		}else if ($this->session->userdata('level') == 2 || $this->session->userdata('level') == 4) {
+			redirect('admin/base_kandidat');
 		}else if ($this->session->userdata('level') == 3) {
 			redirect('vote');
 		}else{

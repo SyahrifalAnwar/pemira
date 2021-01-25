@@ -171,7 +171,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row align-items-center hero-content">
 				<div class="col-lg-12">
-					<h3 class="text-white text-center display-4 font-weight-semibold mb-4 hero-1-title">Kandidat DPM</h3>
+					<h3 class="text-white text-center display-4 font-weight-semibold mb-4 hero-1-title">Kandidat</h3>
 
 
 				</div>
@@ -187,6 +187,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<!-- Team start -->
 	<section class="section bg-light" id="team">
 		<div class="container">
+			<h2><center>Kandidat DPM</center></h2>
 
 
 			<div class="row justify-content-center ">
@@ -217,6 +218,50 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<!-- end container -->
 	</section>
 	<!-- Team end -->
+
+	<section class="bg-light" id="team">
+		<div class="container">
+			<h2><center>Kandidat Senada</center></h2>
+
+
+			<div class="row justify-content-center ">
+				<div class="col-lg-4 col-6">
+						<div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
+							<div class="position-relative overflow-hidden">
+								<img src="<?php echo base_url('upload/senada/1.png') ?>" alt="" class="img-fluid d-block mx-auto" />
+
+							</div>
+							<div class="p-4">
+								<h3 class="font-size-19 mb-1">ASWAR</h3>
+								
+							</div>
+						</div>
+					</div>
+				<!-- end col -->
+
+				<div class="col-lg-4 col-6">
+						<div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
+							<div class="position-relative overflow-hidden">
+								<img src="<?php echo base_url('upload/senada/2.png') ?>" alt="" class="img-fluid d-block mx-auto" />
+
+							</div>
+							<div class="p-4">
+								<h3 class="font-size-19 mb-1">HADYAN ABDUL AZIZ</h3>
+								
+							</div>
+						</div>
+					</div>
+				<!-- end col -->
+
+
+			</div>
+			<!-- end row -->
+		</div>
+		<!-- end container -->
+
+
+		<!-- end container -->
+	</section>
 
 
 	<?php $this->load->view('include/footer') ?>

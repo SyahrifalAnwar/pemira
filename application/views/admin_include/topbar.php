@@ -17,17 +17,15 @@
 
                             <ul class="list-inline float-right mb-0 mr-3">
                                
-                               
+                               <?php foreach ($datauser as $key => $datauser) {} ?>
                                 <li class="list-inline-item dropdown notification-list">
                                     <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
                                         aria-expanded="false">
-                                        <img src="<?= base_url() ?>assets/assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle img-thumbnail">
+                                        <img onchange="" src="https://www.pngkey.com/png/detail/115-1150152_default-profile-picture-avatar-png-green.png" alt="user" class="rounded-circle img-thumbnail">
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                         <!-- item-->
-                                        <?php foreach ($datauser as $key => $datauser) {
-                                            # code...
-                                        } ?>
+                                        
                                         <div class="dropdown-item noti-title">
                                             <h5>Hai, <?php echo $datauser['nama']; ?></h5>
                                         </div>

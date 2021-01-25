@@ -35,7 +35,7 @@ background-attachment: fixed;">
            <small style="color: red" id="pesan"></small></label>
            <div class="row">
             <div class="col-md-12">
-             <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="ketua_surat_mahasiswaaktif" class="form-control" >
+             <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="ketua_surat_mahasiswaaktif" class="form-control" >
          </div>
          <div class="col-md-3">
          </div>
@@ -46,7 +46,7 @@ background-attachment: fixed;">
     <small style="color: red" id="pesan2"></small></label>
    <div class="row">
     <div class="col-md-12">
-     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="" name="ketua_surat_hasilstudi" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="ketua_surat_hasilstudi" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
@@ -184,7 +184,7 @@ background-attachment: fixed;">
            <label for="nim" class="form-label">Surat Keterangan Mahasiswa Aktif</label>
            <div class="row">
             <div class="col-md-12">
-             <input type="file" onchange="validate_fileupload(this.value);" required="" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="wakil_surat_mahasiswaaktif" class="form-control" >
+             <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="wakil_surat_mahasiswaaktif" class="form-control" >
          </div>
          <div class="col-md-3">
          </div>
@@ -194,7 +194,7 @@ background-attachment: fixed;">
    <label for="nim" class="form-label">Kartu Hasil Studi dari Semester 1 hingga saat ini</label>
    <div class="row">
     <div class="col-md-12">
-     <input type="file" onchange="validate_fileupload(this.value);" required="" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="wakil_surat_hasilstudi" class="form-control" >
+     <input type="file" onchange="validate_fileupload(this.value);" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="wakil_surat_hasilstudi" class="form-control" >
  </div>
  <div class="col-md-3">
  </div>
