@@ -149,7 +149,7 @@
 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 20px; padding-bottom: 20px; font-family: Arial, sans-serif"><![endif]-->
 <div style="color:#06a2d8;font-family:Poppins, Arial, Helvetica, sans-serif;line-height:1.2;padding-top:20px;padding-right:10px;padding-bottom:20px;padding-left:10px;">
 <div style="line-height: 1.2; font-size: 12px; color: #06a2d8; font-family: Poppins, Arial, Helvetica, sans-serif; mso-line-height-alt: 14px;">
-<p style="font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin: 0;"> Dokumen Anda Telah Berhasil Terkirim</p>
+<p style="font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin: 0;">Anda Berhasil Melakukkan Registrasi Ulang</p>
 </div>
 </div>
 <!--[if mso]></td></tr></table><![endif]-->
@@ -163,7 +163,6 @@
 <table>
 	<tr><td>Nama</td><td>:</td><td><?php echo $user_data['nama']; ?></td></tr>
 	<tr><td>NIM</td><td>:</td><td><?php echo $user_data['nim']; ?></td></tr>
-	<tr><td>Email</td><td>:</td><td><?php echo $user_data['email'];; ?></td></tr>
 	<tr><td>Password</td><td>:</td><td><strong><?php echo $password; ?></strong></td></tr>
 </table>
 <center style="color: red;">Jangan memberikan informasi rahasia ini kepada siapapun.</center>

@@ -20,9 +20,6 @@
             <!-- ========== Left Sidebar Start ========== -->
            
             <!-- Left Sidebar End -->
-            <?php if ($this->session->userdata('level') == 1) {
-                # code...
-            } ?>
                 <?php $this->load->view('admin_include/menu_kandidat') ?>
             <!-- Start right Content here -->
 
@@ -54,41 +51,36 @@
 
                             <!-- end page title end breadcrumb -->
                             <div class="row">
-                                <!-- Column -->
-                                <!-- Column -->
-                               <div class="col-md-12 col-xl-4">
-                                    <div class="card m-b-30">
-                                        <img class="card-img-top img-fluid" src="<?php echo base_url(); ?>assets/images/dpm.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title mt-0"></h5>
-                                            
-                                            <a href="<?php echo base_url('vote/kandidat/dpm') ?>" style="width: 100%" class="btn btn-primary">LIHAT KANDIDAT</a>   
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Column -->
-                                <!-- Column -->
                                 <div class="col-md-12 col-xl-4">
-                                    <div class="card m-b-30">
-                                        <img class="card-img-top img-fluid" src="<?php echo base_url(); ?>assets/images/bem.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title mt-0"></h5>
-                                            
-                                            <a href="<?php echo base_url('vote/kandidat/bem') ?>" style="width: 100%" class="btn btn-primary">LIHAT KANDIDAT</a>  
+                                    <div class="card m-b-30 border-0">
+
+                                        <div class="card-body  text-center">
+                                            <img src="https://kprsttnf.com/upload/senada/1.png" alt="" class=" mx-auto d-block w-50">
+
+                                            <div class="text-center">
+                                                <h5>ASWAR</h5>
+                                                <p class="text-muted">0110218009</p>
+                                            </div>
+
+                                           
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-12 col-xl-4">
-                                    <div class="card m-b-30">
-                                        <img class="card-img-top img-fluid" src="<?php echo base_url(); ?>assets/images/senada.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title mt-0"></h5>
-                                            
-                                            <a href="<?php echo base_url('vote/kandidat/senada') ?>" style="width: 100%" class="btn btn-primary">LIHAT KANDIDAT</a>   
+                                    <div class="card m-b-30 border-0">
+
+                                        <div class="card-body  text-center">
+                                            <img src="https://kprsttnf.com/upload/senada/2.png" alt="" class=" mx-auto d-block w-50">
+
+                                            <div class="text-center">
+                                                <h5>HADYAN ABDUL AZIZ</h5>
+                                                <p class="text-muted">0110118059</p>
+                                            </div>
+
+                                           
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Column -->
                             </div>
 
                        

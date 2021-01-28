@@ -37,4 +37,31 @@ class Vote extends CI_Controller {
 		$id   = $this->session->userdata('id');
 		
 	}
+
+	public function kandidat($url='')
+	{
+		$id   = $this->session->userdata('id');
+
+		if ($url == 'bem') {
+			$data = array(
+				'kandidat_bem' => $this->M_data->pendaftar_presma(),
+				'datauser' => $this->M_data->find_user($id),
+				'get_organisasi' => $this->M_data->get_organisasi()
+			);
+			$this->load->view('vote/kandidat_bem', $data);
+		}else if ($url == 'dpm'){
+			$data = array(
+				'kandidat_dpm' => $this->M_data->pendaftar_dpm(),
+				'datauser' => $this->M_data->find_user($id),
+				'get_organisasi' => $this->M_data->get_organisasi()
+			);
+			$this->load->view('vote/kandidat_dpm', $data);
+		}else if ($url == 'senada'){
+			$data = array(
+				'datauser' => $this->M_data->find_user($id),
+				'get_organisasi' => $this->M_data->get_organisasi()
+			);
+			$this->load->view('vote/kandidat_senada', $data);
+		}
+	}
 }

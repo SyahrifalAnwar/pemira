@@ -12,6 +12,8 @@ class Registrasi_ulang extends CI_Controller {
 	public function regis()
 	{
 		$nim = $this->input->post('nim');
+		$email = $this->input->post('email');
+		
 		$this->load->model('M_data');
 		$reg = $this->M_data->regisulang_check($nim);
 		$password = rand();
@@ -22,7 +24,7 @@ class Registrasi_ulang extends CI_Controller {
 
 				$this->M_data->save_regisulang($nim, $pw);
 
-				$email = $rig['email'];
+				// $email = $rig['email'];
 
 				$user_data = array(
 					'data_user' => $reg,

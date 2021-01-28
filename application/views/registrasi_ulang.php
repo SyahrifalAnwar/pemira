@@ -39,6 +39,11 @@
                                 <input name="nim" required="" placeholder="Masukkan Nim anda" id="nim"
                                 type="number" class="form-control" value="" />
                             </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input name="email" required="" placeholder="Masukkan Email anda" id="email"
+                                type="email" class="form-control" value="" />
+                            </div>
                             
                             <div class="d-grid mt-3"><button type="submit" class="btn btn-primary btn-none">Registrasi Ulang</button></div>
 
