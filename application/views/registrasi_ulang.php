@@ -90,11 +90,40 @@
       dataType: 'json',
       success: function(response) {
         if (response.success == true) {
-          Swal.fire(
-            'Hai, Apa kamu <br>'+response.messages+' ?',
-            'Yuk isi emailmu untuk mengkonfirmasi akun',
-            'success'
-            )
+          const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+              confirmButton: 'btn btn-success',
+              cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+          })
+
+          swalWithBootstrapButtons.fire({
+            title:  'Hai, Apa kamu <br>'+response.messages+' ?',
+            text: 'Yuk isi emailmu untuk mengkonfirmasi akun',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Ya, Ini Saya',
+            cancelButtonText: 'Bukan',
+            reverseButtons: true
+          }).then((result) => {
+            if (result.isConfirmed) {
+             
+            } else if (
+              
+              /* Read more about handling dismissals below */
+              result.dismiss === Swal.DismissReason.cancel
+              ) {
+              document.getElementById("nim").value = '';
+              swalWithBootstrapButtons.fire(
+                'Cancelled',
+                'Periksa kembali nim yang kamu input',
+                'error'
+                )
+            }
+          })
+
+
         }else{
           Swal.fire(
             'Terjadi kesalahan',
