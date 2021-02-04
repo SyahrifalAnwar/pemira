@@ -57,7 +57,8 @@
                                                 <th>No</th>
                                                 <th>Nama Lengkap</th>
                                                 <th>NIM</th>
-                                                <th>Angkatan</th>  
+                                                <th>Email</th>  
+                                                 <th>Angkatan</th>  
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -134,7 +135,7 @@
                 "iDisplayLength": 10,
                 "aLengthMenu": [[10, 20, 50, 100, 150], [10, 20, 50, 100, 150]],
                 "ajax":{
-                    url :"<?php echo site_url('Secure/get_datadpt_json/'); ?>",
+                    url :"<?php echo site_url('Admin/get_datadpt_json/'); ?>",
                     type: "POST",
                     error: function(){
                         $(".my-grid-error").html("");

@@ -22,7 +22,7 @@ class Registrasi_ulang extends CI_Controller {
 
 			if ($rig['status'] == 0) {
 
-				$this->M_data->save_regisulang($nim, $pw);
+				$this->M_data->save_regisulang($nim, $pw, $email);
 
 				// $email = $rig['email'];
 
@@ -73,17 +73,18 @@ class Registrasi_ulang extends CI_Controller {
 
 				$validator['success'] = false;
 				$validator['status'] = 'error';
-				$validator['messages'] = "Anda sudah melakkukan registrasi ulang.";
+				$validator['messages'] = "Anda sudah melakukan registrasi ulang.";
 
 			}else if($rig['status'] == 2){
 				$validator['success'] = false;
 				$validator['status'] = 'error';
-				$validator['messages'] = "Anda sudah melakkukan voting.";
+				$validator['messages'] = "Anda sudah melakukan voting.";
 
-			}else if($rig['status'] == NULL || $rig['status'] == ''){
+			}else{
+				
 				$validator['success'] = false;
 				$validator['status'] = 'error';
-				$validator['messages'] = "NIM anda tidak terdaftar.";
+				$validator['messages'] = "Maaf, anda belum terdaftar sebagai Daftar Pemilih Tetap pada pelaksanaan Pemira tahun ini, segera perbaharui status keikutsertaan anda melalui livechat kami";
 			}
 
 			echo json_encode($validator);

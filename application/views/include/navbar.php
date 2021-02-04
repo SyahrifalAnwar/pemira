@@ -31,7 +31,7 @@
 				
 				
 			</ul>
-			<!-- <a href="<?php echo base_url('registrasi_ulang') ?>" class=" btn btn-sm rounded-pill nav-btn ms-lg-3">Registrasi Ulang</a> -->
+			<a href="<?php echo base_url('registrasi_ulang') ?>" class=" btn btn-sm rounded-pill nav-btn ms-lg-3">Registrasi Ulang</a>
 			<a href="<?php echo base_url('secure/login') ?>" class=" btn btn-sm rounded-pill nav-btn ms-lg-3">Login</a>
 		</div>
 	</div>

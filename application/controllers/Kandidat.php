@@ -21,4 +21,12 @@ class Kandidat extends CI_Controller {
 			'detail_dpm' => $this->M_data->detail_dpm($id_kandidat) );
 		$this->load->view('detail_dpm', $data);
 	}
+
+	public function detail_bem()
+	{
+		$id_kandidat = $this->uri->segment(3);
+		$data = array(
+			'detail_dpm' => $this->M_data->detail_dpm($id_kandidat) );
+		$this->load->view('detail_dpm', $data);
+	}
 }

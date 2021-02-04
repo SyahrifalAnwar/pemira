@@ -56,11 +56,12 @@
                                     <div class="card m-b-30 border-0">
 
                                         <div class="card-body  text-center">
-                                            <img src="<?php echo base_url().'upload/'.$kandidat_bem['nim'].'/'.$kandidat_bem['foto'] ?>" alt="" class=" mx-auto d-block w-50">
+                                              <img src="<?php echo base_url().'upload/'.$kandidat_bem['ketua_nim'].'/foto.jpg' ?>" alt="" class=" mx-auto d-block w-50">
+
 
                                             <div class="text-center">
-                                                <h5><?php echo $kandidat_bem['nama'] ?></h5>
-                                                <p class="text-muted"><?php echo $kandidat_bem['nim'] ?></p>
+                                                <h5><?php echo $kandidat_bem['ketua_nama'] ?></h5>
+                                                <p class="text-muted"><?php echo $kandidat_bem['ketua_nim'] ?></p>
                                                 <button class="btn btn-block btn-raised btn-info mb-3">Lihat Profile</button>
                                             </div>
 

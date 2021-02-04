@@ -177,8 +177,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<ul>
 									<li>Pemilihan Pasangan calon Ketua & Wakil BEM dilaksanakan secara LANGSUNG & TIDAK BOLEH DIWAKILKAN dengan mengedepankan prinsip-prinsip Rahasia, Umum, Bebas, jujur dan adil.</li>
 									<li>Pemilih Merupakan mahasiswa aktif STT Terpadu Nurul FIkri Yang Telah Melakukan Registrasi Ulang pada waktu yang telah ditetapkan.</li>
-									<li>Pemungutan Suara Secara Daring pada Web E-Pemira Dilakukan Pada Tanggal 29 Januari Pukul 07.00 Sampai Pukul 20.00</li>
-									<li>Voting Akan ditutup pada tanggal 29 Januari pada pukul 21.00</li>
+									<li>Pemungutan Suara Secara Daring pada Web E-Pemira Dilakukan Pada Tanggal 13 Februari 2021 Pukul 07.00 Sampai Pukul 20.00</li>
+									<li>Voting Akan ditutup pada tanggal 13 Februari 2021 pada pukul 21.00</li>
 									<li>Pemilihan ini hanya dilakukan satu kali dan tidak dapat melakukan pemilihan ulang.</li>
 									<li>Kandidat terpilih ditetapkan berdasarkan suara terbanyak hasil pemilihan.</li>
 								</ul>

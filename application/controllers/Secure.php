@@ -23,6 +23,31 @@ class Secure extends CI_Controller {
 		
 	}
 
+	public function check_user()
+	{
+		$nim = $this->input->post('nim');
+		$this->load->model('M_data');
+		$data = $this->M_data->cari_dpt($nim);
+		if($data){
+
+			foreach ($data as $data) {}
+
+    		$validator['success'] = true;
+    		$validator['status'] = 'success';
+    		$validator['messages'] = $data['nama'];
+
+    	}else{
+
+    		$validator['success'] = false;
+    		$validator['status'] = 'error';
+    		$validator['messages'] = "Maaf, anda belum terdaftar sebagai Daftar Pemilih Tetap pada pelaksanaan Pemira tahun ini, segera perbaharui status keikutsertaan anda melalui livechat kami";
+
+    	}
+    	echo json_encode($validator);
+
+
+	}
+
 	public function pendaftar()
 	{
 		$this->load->model('M_data');
@@ -93,8 +118,6 @@ class Secure extends CI_Controller {
 
     public function nomor_urut()
     {
-        /* Validasi user */
-        /* End validasi user */
 
         $data = array(
 			'pendaftar_dpm' => $this->M_data->pendaftar_dpm_random(),

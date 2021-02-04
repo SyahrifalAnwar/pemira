@@ -127,34 +127,13 @@
                                             <div class="d-flex row">
                                                 <div class="col-3 align-self-center">
                                                     <div class="round">
-                                                        <i class="mdi mdi-account-multiple"></i>
+                                                        <i class="mdi mdi-calculator"></i>
                                                     </div>
                                                 </div>
                                                 <div class="col-8 ml-auto align-self-center text-center">
                                                     <div class="m-l-10 text-white float-right">
-                                                        <h5 class="mt-0 round-inner">2</h5>
-                                                        <p class="mb-0">Kandidat Senada</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                 <div class="col-sm-12 col-md-6 col-xl-3">
-                                    <div class="card bg-danger m-b-30">
-                                        <div class="card-body">
-                                            <div class="d-flex row">
-                                                <div class="col-3 align-self-center">
-                                                    <div class="round">
-                                                        <i class="mdi mdi-google-physical-web"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="col-8 ml-auto align-self-center text-center">
-                                                    <div class="m-l-10 text-white float-right">
-                                                        <h5 class="mt-0 round-inner"><?php foreach ($count_peserta_regis as $key => $count_peserta_regis) {
-                                                            echo $count_peserta_regis['count_peserta_regis'];
-                                                        } ?></h5>
-                                                        <p class="mb-0 ">Peserta Registrasi Ulang</p>
+                                                        <h5 class="mt-0 round-inner">$32874</h5>
+                                                        <p class="mb-0">Total Sales</p>
                                                     </div>
                                                 </div>
                                             </div>

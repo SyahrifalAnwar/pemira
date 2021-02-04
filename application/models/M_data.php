@@ -18,9 +18,9 @@ class M_data extends CI_Model {
 
 	}
 
-	public function save_regisulang($nim, $pass)
+	public function save_regisulang($nim, $pw, $email)
 	{
-		$sql = "UPDATE `pemilih` SET `status` = '1', `sandi` = '$pass' WHERE nim = '$nim'";
+		$sql = "UPDATE `pemilih` SET `status` = '1', `sandi` = '$pw',  `email` = '$email' WHERE nim = '$nim'";
 		$query = $this->db->query($sql);
 		return $query;
 	}
@@ -42,6 +42,13 @@ class M_data extends CI_Model {
 	public function count_peserta()
 	{
 		$sql = "SELECT count(nim) as count_peserta FROM `pemilih` WHERE id_level = 3";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+
+	public function count_peserta_regis($value='')
+	{
+		$sql = "SELECT count(nim) as count_peserta_regis FROM `pemilih` WHERE id_level = 3 AND status = 1";
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
@@ -71,7 +78,7 @@ class M_data extends CI_Model {
 	{
 		$id_wt = $this->session->userdata('id_wt');
 		$sql = "
-		SELECT (@row:=@row+1) AS nomor, nama, nim
+		SELECT (@row:=@row+1) AS nomor, nama, nim, email
 		FROM
 		`pemilih` AS a
 		, (SELECT @row := 0) r 

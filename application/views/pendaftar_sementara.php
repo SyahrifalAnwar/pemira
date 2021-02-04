@@ -183,16 +183,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<!-- end hero shape -->
 	</section>
 	<!-- Hero End -->
-
-	<!-- Team start -->
-	<section class="section bg-light" id="team">
+	<section class="section bg-light">
 		<div class="container">
-			<h2><center>Kandidat DPM</center></h2>
+			
 
 
 			<div class="row justify-content-center ">
-				<?php foreach ($pendaftar_dpm as $pendaftar_dpm) { ?>
-					<div class="col-lg-4 col-6">
+				<div class="col-md-4 col-sm-12">
+					<h2><center><img style="width: 50%" src="<?php echo base_url('assets/images/bem.png') ?>"></center></h2>
+					<div class="row justify-content-center ">
+						<?php foreach ($pendaftar_presma as $pendaftar_presma) { ?>
+						<div class="col-6 col-md-6">
+							<div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
+								<div class="position-relative overflow-hidden">
+									<img src="<?php echo base_url('upload/').$pendaftar_presma['ketua_nim'].'/'.$pendaftar_presma['foto'] ?>" alt="" class="img-fluid d-block mx-auto" />
+
+								</div>
+								<div class="p-4">
+									<h3 class="font-size-19 mb-1"><?php echo $pendaftar_presma['ketua_nama']; ?></h3>
+									<p class="text-muted text-uppercase font-size-14 mb-0"><?php echo $pendaftar_presma['ketua_nim']; ?></p><br>
+
+								</div>
+							</div>
+						</div>
+					<?php } ?>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-12">
+					<h2><center><img style="width: 50%" src="<?php echo base_url('assets/images/dpm.png') ?>"></center></h2>
+					<div class="row justify-content-center ">
+						<?php foreach ($pendaftar_dpm as $pendaftar_dpm) { ?>
+					<div class="col-6">
 						<div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
 							<div class="position-relative overflow-hidden">
 								<img src="<?php echo base_url('upload/').$pendaftar_dpm['nim'].'/'.$pendaftar_dpm['foto'] ?>" alt="" class="img-fluid d-block mx-auto" />
@@ -201,11 +222,48 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<div class="p-4">
 								<h3 class="font-size-19 mb-1"><?php echo $pendaftar_dpm['nama']; ?></h3>
 								<p class="text-muted text-uppercase font-size-14 mb-0"><?php echo $pendaftar_dpm['nim']; ?></p><br>
-								<button id="DetailKandidat" href="<?php echo base_url('kandidat/detail/').$pendaftar_dpm['nim']; ?>" class="btn btn-primary">PROGRAM</button>
+								<!-- <button id="DetailKandidat" href="<?php echo base_url('kandidat/detail_bem/').$pendaftar_dpm['nim']; ?>" class="btn btn-primary">PROGRAM</button> -->
 							</div>
 						</div>
 					</div>
 				<?php } ?>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-12">
+					<h2><center><img style="width: 50%" src="<?php echo base_url('assets/images/senada.png') ?>"></center></h2>
+						<div class="row justify-content-center ">
+				<div class="col-6">
+					<div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
+						<div class="position-relative overflow-hidden">
+							<img src="<?php echo base_url('upload/senada/1.png') ?>" alt="" class="img-fluid d-block mx-auto" />
+
+						</div>
+						<div class="p-4">
+							<h3 class="font-size-19 mb-1">ASWAR</h3>
+
+						</div>
+					</div>
+				</div>
+				<!-- end col -->
+
+				<div class="col-6">
+					<div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
+						<div class="position-relative overflow-hidden">
+							<img src="<?php echo base_url('upload/senada/2.png') ?>" alt="" class="img-fluid d-block mx-auto" />
+
+						</div>
+						<div class="p-4">
+							<h3 class="font-size-19 mb-1">HADYAN ABDUL AZIZ</h3>
+
+						</div>
+					</div>
+				</div>
+				<!-- end col -->
+
+
+			</div>
+				</div>
+				
 				<!-- end col -->
 
 
@@ -218,50 +276,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<!-- end container -->
 	</section>
 	<!-- Team end -->
+	<!-- Team start -->
 
-	<section class="bg-light" id="team">
-		<div class="container">
-			<h2><center>Kandidat Senada</center></h2>
-
-
-			<div class="row justify-content-center ">
-				<div class="col-lg-4 col-6">
-						<div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
-							<div class="position-relative overflow-hidden">
-								<img src="<?php echo base_url('upload/senada/1.png') ?>" alt="" class="img-fluid d-block mx-auto" />
-
-							</div>
-							<div class="p-4">
-								<h3 class="font-size-19 mb-1">ASWAR</h3>
-								
-							</div>
-						</div>
-					</div>
-				<!-- end col -->
-
-				<div class="col-lg-4 col-6">
-						<div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
-							<div class="position-relative overflow-hidden">
-								<img src="<?php echo base_url('upload/senada/2.png') ?>" alt="" class="img-fluid d-block mx-auto" />
-
-							</div>
-							<div class="p-4">
-								<h3 class="font-size-19 mb-1">HADYAN ABDUL AZIZ</h3>
-								
-							</div>
-						</div>
-					</div>
-				<!-- end col -->
-
-
-			</div>
-			<!-- end row -->
-		</div>
-		<!-- end container -->
-
-
-		<!-- end container -->
-	</section>
+	<!-- Team end -->
 
 
 	<?php $this->load->view('include/footer') ?>
@@ -270,19 +287,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<script type="text/javascript">
 		$(document).on('click', '#DetailKandidat', function(e){
-		e.preventDefault();
-		
-		if($(this).attr('id') == 'DetailKandidat')
-		{
+			e.preventDefault();
 
-			$('.modal-dialog').removeClass('modal-sm');
-			$('.modal-dialog').addClass('modal-md');
-			$('#ModalHeader').html('Detail Kandidat');
-		}
-		
-		$('#ModalContent').load($(this).attr('href'));
-		$('#GetModal').modal('show');
-	});
+			if($(this).attr('id') == 'DetailKandidat')
+			{
+
+				$('.modal-dialog').removeClass('modal-sm');
+				$('.modal-dialog').addClass('modal-md');
+				$('#ModalHeader').html('Detail Kandidat');
+			}
+
+			$('#ModalContent').load($(this).attr('href'));
+			$('#GetModal').modal('show');
+		});
 	</script>
 	<div class="modal fade" id="GetModal" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -291,8 +308,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="modal-header">
 				<h5 class="modal-title" id="ModalHeader"></h5>
 				<button onclick='$("#GetModal").modal("hide");' type="button" class="close btn btn-sm btn-danger"  data-dismiss="modal" aria-hidden="true">
-          <span aria-hidden="true">&times;</span>
-        </button>
+					<span aria-hidden="true">&times;</span>
+				</button>
 			</div>
 			<div class="modal-body" id="ModalContent">
 

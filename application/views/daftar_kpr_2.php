@@ -350,17 +350,7 @@ background-attachment: fixed;">
         }else if (b == "") {
           document.getElementById("pesan2").innerHTML = "*Dokumen tidak boleh kosong";
           return false;
-        }else if (c == "") {
-          document.getElementById("pesan3").innerHTML = "*Dokumen tidak boleh kosong";
-          return false;
-        }else if (d == "") {
-          document.getElementById("pesan4").innerHTML = "*Dokumen tidak boleh kosong";
-          return false;
-        }else if (e == "") {
-          document.getElementById("pesan5").innerHTML = "*Dokumen tidak boleh kosong";
-          return false;
         }
-
         let current = this.closest('.step');
         $(current).css('display', 'none');
         $(current).next().fadeIn('fast');

@@ -67,7 +67,7 @@
     </tr>
     <tr>
         <td colspan="12" class="textCenter pt-2">
-            Jumat, 29 Januari 2021
+            Sabtu, 13 Februari 2021
         </td>
     </tr>
     <tr>

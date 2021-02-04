@@ -15,6 +15,7 @@ class Admin extends CI_Controller {
 		$id   = $this->session->userdata('id');
 		$data = array(
 			'datauser' => $this->M_data->find_user($id),
+			'count_peserta_regis' => $this->M_data->count_peserta_regis(),
 			'count_peserta' => $this->M_data->count_peserta(),
 			'kandidat_bem' => $this->M_data->kandidat_bem(),
 			'kandidat_dpm' => $this->M_data->kandidat_dpm()
@@ -27,10 +28,17 @@ class Admin extends CI_Controller {
 			redirect('vote');
 		}else if ($this->session->userdata('level') == 4) {
 			redirect('admin/base_kandidat');
+		}}else if ($this->session->userdata('level') == 5) {
+			redirect('admin/test');
 		}else{
 			$this->load->view('login');
 		}
 		
+	}
+
+	public function test($value='')
+	{
+		# code...
 	}
 
 	public function base_kandidat($value='')
@@ -103,6 +111,39 @@ class Admin extends CI_Controller {
 	{
 		$data = array('nim' => $nim );
 		$this->load->view('admin/upload_sk', $data);
+	}
+
+	public function get_datadpt_json($value='')
+	{
+		 $requestData  = $_REQUEST;
+          $fetch          = $this->M_data->get_datadpt_json($requestData['search']['value'], $requestData['order'][0]['column'], $requestData['order'][0]['dir'], $requestData['start'], $requestData['length']);
+
+          $totalData      = $fetch['totalData'];
+          $totalFiltered  = $fetch['totalFiltered'];
+          $query          = $fetch['query'];
+
+          $data   = array();
+          foreach($query->result_array() as $row)
+          {
+            $nestedData = array();
+            $nestedData[]   = $row['nomor'];
+            $nestedData[]   = $row['nama'];
+            $nestedData[]   = $row['nim'];
+            $nestedData[]   = $row['email'];
+            $nestedData[]   = '20'.substr($row['nim'],5,2);
+
+
+            $data[] = $nestedData;
+        }
+
+        $json_data = array(
+            "draw"            => intval( $requestData['draw'] ),
+            "recordsTotal"    => intval( $totalData ),
+            "recordsFiltered" => intval( $totalFiltered ),
+            "data"            => $data
+        );
+
+        echo json_encode($json_data);
 	}
 
 	public function pemilih()
