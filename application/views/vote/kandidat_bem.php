@@ -20,7 +20,7 @@
             <!-- ========== Left Sidebar Start ========== -->
            
             <!-- Left Sidebar End -->
-                <?php $this->load->view('admin_include/menu') ?>
+                <?php $this->load->view('admin_include/menu_kandidat') ?>
             <!-- Start right Content here -->
 
             <div class="content-page">
@@ -28,7 +28,8 @@
                 <div class="content">
 
                     <!-- Top Bar Start -->
-                    <?php $this->load->view('admin_include/topbar') ?>
+                    <?php $this->load->view('admin_include/topbar')
+                     ?>
                     <!-- Top Bar End -->
 
                     <div class="page-content-wrapper dashborad-v">
