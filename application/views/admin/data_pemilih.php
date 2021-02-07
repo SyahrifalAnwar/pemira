@@ -58,7 +58,8 @@
                                                 <th>Nama Lengkap</th>
                                                 <th>NIM</th>
                                                 <th>Email</th>  
-                                                 <th>Angkatan</th>  
+                                                <th>Angkatan</th>
+                                                <th>Status</th>  
                                             </tr>
                                         </thead>
                                         <tbody>

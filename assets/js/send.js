@@ -18,7 +18,7 @@
           Swal.fire({
             icon: 'error',
             title: 'Login Gagal',
-            text: 'Nim / Password anda Salah'
+            text: response.messages
           })
 
           } // /else

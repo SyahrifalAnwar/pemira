@@ -26,7 +26,19 @@ class Kandidat extends CI_Controller {
 	{
 		$id_kandidat = $this->uri->segment(3);
 		$data = array(
-			'detail_dpm' => $this->M_data->detail_dpm($id_kandidat) );
-		$this->load->view('detail_dpm', $data);
+			'detail_bem' => $this->M_data->detail_kandidat($id_kandidat) );
+		$this->load->view('detail_bem', $data);
+	}
+
+	public function test_voting()
+	{
+		$id_kandidat = $this->uri->segment(3);
+		$this->load->view('vote/konfirmasi_vote');
+	}
+
+	public function voting()
+	{
+		$id_kandidat = $this->uri->segment(3);
+		$this->load->view('vote/konfirmasi_vote');
 	}
 }

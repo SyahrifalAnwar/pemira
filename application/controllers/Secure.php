@@ -15,7 +15,7 @@ class Secure extends CI_Controller {
 			redirect('admin');
 		}else if ($this->session->userdata('level') == 2 || $this->session->userdata('level') == 4) {
 			redirect('admin/base_kandidat');
-		}else if ($this->session->userdata('level') == 3) {
+		}else if ($this->session->userdata('level') == 3 || $this->session->userdata('level') == 5) {
 			redirect('vote');
 		}else{
 			$this->load->view('login');
@@ -32,21 +32,22 @@ class Secure extends CI_Controller {
 
 			foreach ($data as $data) {}
 
-    		$validator['success'] = true;
-    		$validator['status'] = 'success';
-    		$validator['messages'] = $data['nama'];
+				$validator['success'] = true;
+			$validator['status'] = 'success';
+			$validator['messages'] = $data['nama'];
 
-    	}else{
+		}else{
 
-    		$validator['success'] = false;
-    		$validator['status'] = 'error';
-    		$validator['messages'] = "Maaf, anda belum terdaftar sebagai Daftar Pemilih Tetap pada pelaksanaan Pemira tahun ini, segera perbaharui status keikutsertaan anda melalui livechat kami";
+			$validator['success'] = false;
+			$validator['status'] = 'error';
+			$validator['messages'] = "Maaf, anda belum terdaftar sebagai Daftar Pemilih Tetap pada pelaksanaan Pemira tahun ini, segera perbaharui status keikutsertaan anda melalui livechat kami";
 
-    	}
-    	echo json_encode($validator);
+		}
+		echo json_encode($validator);
 
 
 	}
+
 
 	public function pendaftar()
 	{
@@ -87,43 +88,43 @@ class Secure extends CI_Controller {
 		$data = $this->M_data->cari_dpt($nim);
 		if($data){
 
-    		$validator['success'] = true;
-    		$validator['status'] = 'success';
-    		$validator['messages'] = "Anda telah terdaftar sebagai Daftar Pemilih Tetap pada Pelaksanaan Pemira tahun ini";
+			$validator['success'] = true;
+			$validator['status'] = 'success';
+			$validator['messages'] = "Anda telah terdaftar sebagai Daftar Pemilih Tetap pada Pelaksanaan Pemira tahun ini";
 
-    	}else{
+		}else{
 
-    		$validator['success'] = false;
-    		$validator['status'] = 'error';
-    		$validator['messages'] = "Maaf, anda belum terdaftar sebagai Daftar Pemilih Tetap pada pelaksanaan Pemira tahun ini, segera perbaharui status keikutsertaan anda melalui livechat kami";
+			$validator['success'] = false;
+			$validator['status'] = 'error';
+			$validator['messages'] = "Maaf, anda belum terdaftar sebagai Daftar Pemilih Tetap pada pelaksanaan Pemira tahun ini, segera perbaharui status keikutsertaan anda melalui livechat kami";
 
-    	}
-    	echo json_encode($validator);
+		}
+		echo json_encode($validator);
 	}
 
-    public function surat_undangan()
-    {
-        $this->load->library('pdf');
-        $this->load->model('M_data');
+	public function surat_undangan()
+	{
+		$this->load->library('pdf');
+		$this->load->model('M_data');
 
-        $nim = $this->input->get('nim');
-        
-        $data['nim'] = $nim;
-        $data['nama'] = $this->M_data->cari_dpt($nim)[0]['nama'];
+		$nim = $this->input->get('nim');
 
-        $output = $this->load->view('template_undangan', $data, true);
+		$data['nim'] = $nim;
+		$data['nama'] = $this->M_data->cari_dpt($nim)[0]['nama'];
 
-        $this->pdf->generate($output, "Surat_Undangan_".str_replace(' ', '-', $data['nama']), true, "A4", "landscape");
-    }
+		$output = $this->load->view('template_undangan', $data, true);
 
-    public function nomor_urut()
-    {
+		$this->pdf->generate($output, "Surat_Undangan_".str_replace(' ', '-', $data['nama']), true, "A4", "landscape");
+	}
 
-        $data = array(
+	public function nomor_urut()
+	{
+
+		$data = array(
 			'pendaftar_dpm' => $this->M_data->pendaftar_dpm_random(),
 			'limit' => 2, );
-        $this->load->view('pemilihan_nomor', $data);
-    }
+		$this->load->view('pemilihan_nomor', $data);
+	}
 
 	public function data_dpt()
 	{
@@ -137,33 +138,33 @@ class Secure extends CI_Controller {
 
 	public function get_datadpt_json()
 	{
-		 $requestData  = $_REQUEST;
-          $fetch          = $this->M_data->get_datadpt_json($requestData['search']['value'], $requestData['order'][0]['column'], $requestData['order'][0]['dir'], $requestData['start'], $requestData['length']);
+		$requestData  = $_REQUEST;
+		$fetch          = $this->M_data->get_datadpt_json($requestData['search']['value'], $requestData['order'][0]['column'], $requestData['order'][0]['dir'], $requestData['start'], $requestData['length']);
 
-          $totalData      = $fetch['totalData'];
-          $totalFiltered  = $fetch['totalFiltered'];
-          $query          = $fetch['query'];
+		$totalData      = $fetch['totalData'];
+		$totalFiltered  = $fetch['totalFiltered'];
+		$query          = $fetch['query'];
 
-          $data   = array();
-          foreach($query->result_array() as $row)
-          {
-            $nestedData = array();
-            $nestedData[]   = $row['nomor'];
-            $nestedData[]   = $row['nama'];
-            $nestedData[]   = $row['nim'];
-            $nestedData[]   = '20'.substr($row['nim'],5,2);
+		$data   = array();
+		foreach($query->result_array() as $row)
+		{
+			$nestedData = array();
+			$nestedData[]   = $row['nomor'];
+			$nestedData[]   = $row['nama'];
+			$nestedData[]   = $row['nim'];
+			$nestedData[]   = '20'.substr($row['nim'],5,2);
 
-            $data[] = $nestedData;
-        }
+			$data[] = $nestedData;
+		}
 
-        $json_data = array(
-            "draw"            => intval( $requestData['draw'] ),
-            "recordsTotal"    => intval( $totalData ),
-            "recordsFiltered" => intval( $totalFiltered ),
-            "data"            => $data
-        );
+		$json_data = array(
+			"draw"            => intval( $requestData['draw'] ),
+			"recordsTotal"    => intval( $totalData ),
+			"recordsFiltered" => intval( $totalFiltered ),
+			"data"            => $data
+		);
 
-        echo json_encode($json_data);
+		echo json_encode($json_data);
 	}
 
 	public function daftar_kpr()
@@ -254,90 +255,146 @@ class Secure extends CI_Controller {
 				'charset'   => 'utf-8',
 				'protocol'  => 'smtp',
 				'smtp_host' => $this->config->item('email_host'),
-            	'smtp_user' => $this->config->item('email_username'),
-            	'smtp_pass'   => $this->config->item('email_password'),
-            	'smtp_crypto' => 'ssl',
-            	'smtp_port'   => 465,
-            	'crlf'    => "\r\n",
-            	'newline' => "\r\n",
-            	'wordwrap' => TRUE
-            ];
-            
-            $this->email->set_header('MIME-Version', '1.0; charset=utf-8');
-            $this->email->set_header('Content-type', 'text/html');
-            $this->email->initialize($config);
-            $this->load->library('email', $config);
+				'smtp_user' => $this->config->item('email_username'),
+				'smtp_pass'   => $this->config->item('email_password'),
+				'smtp_crypto' => 'ssl',
+				'smtp_port'   => 465,
+				'crlf'    => "\r\n",
+				'newline' => "\r\n",
+				'wordwrap' => TRUE
+			];
 
-            $mesg = $this->load->view('mail_done', $register,true);
+			$this->email->set_header('MIME-Version', '1.0; charset=utf-8');
+			$this->email->set_header('Content-type', 'text/html');
+			$this->email->initialize($config);
+			$this->load->library('email', $config);
 
-            $this->email->from($this->config->item('email_username'), "KPR STT-NF", $this->config->item('email_username'));
-            $this->email->to($this->session->userdata('email'));
-            $this->email->subject('Pendaftaran Pemira');
-            $this->email->message($mesg);
-            
-            
+			$mesg = $this->load->view('mail_done', $register,true);
 
-            if($this->email->send()) {
-            	$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengupload dokumen, jika dokumen dirasa belum lengkap silahkan hubungi panitia</div>');
-            	redirect('registrasi/done');
-            }
-            else {
-            	$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengupload dokumen, jika dokumen dirasa belum lengkap silahkan hubungi panitia</div>');
-            	redirect('registrasi/done');
-            }
+			$this->email->from($this->config->item('email_username'), "KPR STT-NF", $this->config->item('email_username'));
+			$this->email->to($this->session->userdata('email'));
+			$this->email->subject('Pendaftaran Pemira');
+			$this->email->message($mesg);
 
 
-        }else{
-        	$this->load->view('daftar_kpr');
-        }
 
-    }
+			if($this->email->send()) {
+				$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengupload dokumen, jika dokumen dirasa belum lengkap silahkan hubungi panitia</div>');
+				redirect('registrasi/done');
+			}
+			else {
+				$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengupload dokumen, jika dokumen dirasa belum lengkap silahkan hubungi panitia</div>');
+				redirect('registrasi/done');
+			}
 
-    public function check_login()
-    {
-    	$this->load->model('M_data');
 
-    	$nim = $this->input->post('nim');
-    	$password = SHA1($this->input->post('password'));
-    	$data 	= $this->M_data->checkleveluser($nim, $password);
+		}else{
+			$this->load->view('daftar_kpr');
+		}
 
-    	$level = $this->M_data->find_user($data);
+	}
 
-    	foreach ($level as $lvl){
-    		$leveluser = $lvl['id_level'];
-    	}
+	public function check_login()
+	{
+		$this->load->model('M_data');
 
-    	if($data){
+		$nim = $this->input->post('nim');
+		$password = SHA1($this->input->post('password'));
+		$data 	= $this->M_data->checkleveluser($nim, $password);
 
-    		$user_data = array(
-    			'id' => $data,
-    			'login_status' => 'success',
-    			'level' => $leveluser,
-    		);
+		$level = $this->M_data->find_user($data);
 
-    		$this->session->set_userdata($user_data);    
+		foreach ($level as $lvl){
+			$leveluser = $lvl['id_level'];
+			$statususer = $lvl['status'];
+		}
 
-    		$validator['success'] = true;
-    		$validator['status'] = 'success';
-    		$validator['messages'] = "Selamat Datang";
+		if($data){
 
-    	}else{
+			$user_data = array(
+				'id' => $data,
+				'login_status' => 'success',
+				'level' => $leveluser,
+				'status' => $statususer,
+			);
 
-    		$validator['success'] = false;
-    		$validator['status'] = 'error';
-    		$validator['messages'] = "Username / Password anda salah";
+			if ($statususer == 1) {
+				$this->session->set_userdata($user_data);    
 
-    	}
+				$validator['success'] = true;
+				$validator['status'] = 'success';
+				$validator['messages'] = "Selamat Datang";
+			}else{
+				$validator['success'] = false;
+				$validator['status'] = 'error';
+				$validator['messages'] = "Kamu sudah melakukan voting";
+			}
 
-    	echo json_encode($validator);
+		}else{
 
-    }
+			$validator['success'] = false;
+			$validator['status'] = 'error';
+			$validator['messages'] = "Username / Password anda salah";
 
-    public function logout()
-    {
-    	$this->session->sess_destroy();
-    	$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
-    	$this->output->set_header("Pragma: no-cache");
-    	redirect();
-    }
+		}
+
+		echo json_encode($validator);
+
+	}
+
+	public function konfirmasi_voting()
+	{
+		$this->load->model('M_data');
+		$id_pemilih = $this->session->userdata('id');
+		$id_kandidat = $this->uri->segment(3);
+		$password = SHA1($this->uri->segment(4));
+		$tanggal = date('Y-m-d');
+		$waktu = date('H:i:s');
+		$data 	= $this->M_data->checkleveluser_vote($id_pemilih, $password);
+
+		$userdata = $this->M_data->find_user($data);
+
+		foreach ($userdata as $usr){
+			$statususer = $usr['status'];
+		}
+
+		$data_voting = array(
+			'nim_pemilih' => $id_pemilih,
+			'nim_peserta' => $id_kandidat,
+			'tanggal' => $tanggal,
+			'waktu' => $waktu,
+			'ip' => $_SERVER['REMOTE_ADDR'],
+			'device' => $_SERVER["HTTP_USER_AGENT"], );
+
+		if ($data) {
+			
+			if ($statususer == 1) {
+				$simpan_vote = $this->M_data->simpan_vote($data_voting);
+				$ubahlevel = $this->M_data->leveluserdone($id_pemilih);
+				$validator['success'] = true;
+				$validator['status'] = 'success';
+				$validator['messages'] = "Voting Berhasil";
+				$validator['pesan'] = "Terimakasih telah berpastisipasi dalam PEMIRA STTNF tahun ini";
+			}else{
+				$validator['success'] = false;
+				$validator['status'] = 'error';
+				$validator['messages'] = "Anda sudah melakukan voting";
+			}
+
+
+		}else{
+			http_response_code(404);
+		}
+
+		echo json_encode($validator);
+
+	}
+
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+		$this->output->set_header("Pragma: no-cache");
+		redirect();
+	}
 }

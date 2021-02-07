@@ -26,15 +26,22 @@ class Vote extends CI_Controller {
 			redirect('admin/kandidat');
 		}else if ($this->session->userdata('level') == 3) {
 			$data = array(
+				'kandidat' => $this->M_data->kandidat(),
 				'datauser' => $this->M_data->find_user($id),
 				'get_organisasi' => $this->M_data->get_organisasi()
 			);
 			$this->load->view('vote', $data);
+
+		}else if ($this->session->userdata('level') == 5) {
+			$data = array(
+				'kandidat' => $this->M_data->kandidat(),
+				'datauser' => $this->M_data->find_user($id),
+				'get_organisasi' => $this->M_data->get_organisasi()
+			);
+			$this->load->view('test/test_voting', $data);
 		}else{
 			$this->load->view('login');
 		}
-
-		$id   = $this->session->userdata('id');
 		
 	}
 

@@ -28,17 +28,12 @@ class Admin extends CI_Controller {
 			redirect('vote');
 		}else if ($this->session->userdata('level') == 4) {
 			redirect('admin/base_kandidat');
-		}}else if ($this->session->userdata('level') == 5) {
-			redirect('admin/test');
+		}else if ($this->session->userdata('level') == 5) {
+			redirect('vote');
 		}else{
 			$this->load->view('login');
 		}
 		
-	}
-
-	public function test($value='')
-	{
-		# code...
 	}
 
 	public function base_kandidat($value='')
@@ -116,7 +111,7 @@ class Admin extends CI_Controller {
 	public function get_datadpt_json($value='')
 	{
 		 $requestData  = $_REQUEST;
-          $fetch          = $this->M_data->get_datadpt_json($requestData['search']['value'], $requestData['order'][0]['column'], $requestData['order'][0]['dir'], $requestData['start'], $requestData['length']);
+          $fetch          = $this->M_data->get_datadpt_json_admin($requestData['search']['value'], $requestData['order'][0]['column'], $requestData['order'][0]['dir'], $requestData['start'], $requestData['length']);
 
           $totalData      = $fetch['totalData'];
           $totalFiltered  = $fetch['totalFiltered'];
@@ -131,6 +126,14 @@ class Admin extends CI_Controller {
             $nestedData[]   = $row['nim'];
             $nestedData[]   = $row['email'];
             $nestedData[]   = '20'.substr($row['nim'],5,2);
+            if ($row['status'] == 1) {
+            	$nestedData[]   = '<button class="btn btn-success">Sudah Registrasi Ulang</button>' ;
+            }else if($row['status'] == 0) {
+            	$nestedData[]   = '<button class="btn btn-danger">Belum Registrasi Ulang</button>' ;
+            }else{
+            	$nestedData[]   = '<button class="btn btn-warning">Sudah Melakukan Voting</button>' ;
+            }
+            
 
 
             $data[] = $nestedData;

@@ -7,7 +7,7 @@ class M_data extends CI_Model {
 	public function checkleveluser($nim, $password){
 
 		if($nim && $password) {
-			$sql = "SELECT * FROM pemilih WHERE nim = '$nim' AND sandi = '$password' AND status = 1";
+			$sql = "SELECT * FROM pemilih WHERE nim = '$nim' AND sandi = '$password'";
 			$query = $this->db->query($sql);
 			$result = $query->row_array();
 			return ($query->num_rows() === 1 ? $result['nim'] : false);
@@ -16,6 +16,33 @@ class M_data extends CI_Model {
 			return false;
 		}
 
+	}
+
+	public function checkleveluser_vote($nim, $password){
+
+		if($nim && $password) {
+			$sql = "SELECT * FROM pemilih WHERE nim = '$nim' AND sandi = '$password'";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+		}
+		else {
+			return false;
+		}
+
+	}
+
+	public function leveluserdone($id)
+	{
+		$sql = "UPDATE `pemilih` SET `status` = '2' WHERE nim = '$id'";
+		$query = $this->db->query($sql);
+		return $query;
+	}
+
+	public function simpan_vote($data_voting)
+	{
+		$query = $this->db->insert('vote', $data_voting);
+		return $query;
 	}
 
 	public function save_regisulang($nim, $pw, $email)
@@ -39,6 +66,19 @@ class M_data extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function regisulang_check_mail($email)
+	{
+		if($email) {
+			$sql = "SELECT * FROM pemilih WHERE email = '$email'";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return $result;
+		}
+		else {
+			return false;
+		}
+	}
+
 	public function count_peserta()
 	{
 		$sql = "SELECT count(nim) as count_peserta FROM `pemilih` WHERE id_level = 3";
@@ -49,6 +89,13 @@ class M_data extends CI_Model {
 	public function count_peserta_regis($value='')
 	{
 		$sql = "SELECT count(nim) as count_peserta_regis FROM `pemilih` WHERE id_level = 3 AND status = 1";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+
+	public function kandidat()
+	{
+		$sql = "SELECT * FROM `kandidat`";
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
@@ -103,7 +150,7 @@ class M_data extends CI_Model {
 		$columns_order_by = array(
 			0   => 'nomor',
 			1   => 'nama',
-			2   => 'nim',
+			2   => 'email',
 			3   => 'nim',
 
 		);
@@ -116,13 +163,64 @@ class M_data extends CI_Model {
 
 	}
 
-	public function cari_dpt($nim)
+	public function get_datadpt_json_admin($like_value = NULL, $column_order = NULL, $column_dir = NULL, $limit_start = NULL, $limit_length = NULL)
 	{
-		
+		$id_wt = $this->session->userdata('id_wt');
+		$sql = "
+		SELECT (@row:=@row+1) AS nomor, nama, nim, email, status
+		FROM
+		`pemilih` AS a
+		, (SELECT @row := 0) r 
+		WHERE 1=1 AND id_level = 3
+
+		";
+
+		$data['totalData'] = $this->db->query($sql)->num_rows();
+
+		if( ! empty($like_value))
+		{
+			$sql .= " AND ( ";
+			$sql .= "
+			a.`nim` LIKE '%".$this->db->escape_like_str($like_value)."%'
+			OR a.`nama` LIKE '%".$this->db->escape_like_str($like_value)."%'
+			";
+			$sql .= " ) ";
+		}
+
+		$data['totalFiltered']	= $this->db->query($sql)->num_rows();
+
+		$columns_order_by = array(
+			0   => 'nomor',
+			1   => 'nama',
+			2   => 'email',
+			3   => 'nim',
+			4   => 'nim',
+			5   => 'status',
+
+		);
+			$sql .= " ORDER BY ".$columns_order_by[$column_order]." ".$column_dir.", nomor ";
+
+			$sql .= " LIMIT ".$limit_start." ,".$limit_length." ";
+
+		$data['query'] = $this->db->query($sql);
+		return $data;
+
+	}
+
+	public function cari_dpt($nim)
+	{		
 		$sql = "SELECT `nama` FROM `pemilih` WHERE `nim` = '$nim'";
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
+
+	public function cari_email($email)
+	{
+		$sql = "SELECT `email` FROM `pemilih` WHERE `email` = '$email'";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+	
 
 	public function detail_dpm($id_kandidat='')
 	{
@@ -131,11 +229,16 @@ class M_data extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function detail_kandidat($id_kandidat='')
+	{
+		$sql = "SELECT * FROM `kandidat` WHERE `nim` = '$id_kandidat'";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+
 	public function find_user($id)
 	{
-		$sql = "SELECT * FROM `pemilih` WHERE `nim` = '$id'
-		
-		";
+		$sql = "SELECT * FROM `pemilih` WHERE `nim` = '$id'";
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}

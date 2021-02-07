@@ -62,7 +62,7 @@
                                             <div class="text-center">
                                                 <h5><?php echo $kandidat_bem['ketua_nama'] ?></h5>
                                                 <p class="text-muted"><?php echo $kandidat_bem['ketua_nim'] ?></p>
-                                                <button class="btn btn-block btn-raised btn-info mb-3">Lihat Profile</button>
+                                                <button href="<?php echo base_url('kandidat/detail_bem/').$kandidat_bem['ketua_nim'] ?>" id="profile" class="btn btn-raised btn-info btn-lg btn-block">VISI & MISI</button>
                                             </div>
 
                                             
@@ -94,8 +94,40 @@
 
         <?php $this->load->view('admin_include/script') ?>
 
-       
-       
+       <script type="text/javascript">
+    $(document).on('click', '#profile', function(e){
+        e.preventDefault();
+        
+
+        if($(this).attr('id') == 'profile')
+        {
+
+            $('.modal-dialog').removeClass('modal-sm');
+            $('.modal-dialog').addClass('modal-md');
+            $('#ModalHeader').html('');
+            $('#ModalContent').load($(this).attr('href'));
+            $('#GetModal').modal('show');
+        }
+
+    });
+</script>
+       <div class="modal" id="GetModal" tabindex="-1" role="dialog"
+aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="ModalHeader"></h5>
+            <button onclick='$("#GetModal").modal("hide");' type="button" class="close btn btn-sm btn-danger"  data-dismiss="modal" aria-hidden="true">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body" id="ModalContent">
+
+        </div>
+
+    </div>
+</div>
+</div>
     </body>
 
 </html>
