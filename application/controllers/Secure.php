@@ -166,6 +166,17 @@ class Secure extends CI_Controller {
 
 		echo json_encode($json_data);
 	}
+	
+	public function live_count()
+	{
+		$this->load->view('live_count');
+	}
+
+	public function live_data()
+	{
+		$this->load->model('M_data');
+		echo json_encode(array('result' => $this->M_data->live_data()));
+	}
 
 	public function daftar_kpr()
 	{

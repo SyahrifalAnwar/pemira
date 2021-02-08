@@ -300,4 +300,17 @@ class M_data extends CI_Model {
 		$sql = $this->db->query("SELECT `ketua_nim` FROM `dokumen_presma` WHERE `ketua_nim`= $nim");
 		return $sql->result();
 	}
+	
+	public function live_data()
+	{
+		$sql = $this->db->query("SELECT b.nama, COUNT(a.id_vote) pemilih FROM vote a INNER JOIN kandidat b ON a.nim_peserta=b.nim GROUP BY b.nama");
+		$result = array();
+		foreach ($sql->result() as $data) {
+			$result[] = array(
+				'name'  => $data->nama,
+				'y' => (float)$data->pemilih
+			);
+		}
+		return $result;
+	}
 }

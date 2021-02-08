@@ -11,4 +11,5 @@ $route['cek_dpt'] = 'Secure/cek_dpt';
 $route['cek_dpt/(:any)'] = 'Secure/cek_dpt/$1';
 $route['data_dpt'] = 'Secure/data_dpt';
 $route['data_dpt/(:any)'] = 'Secure/data_dpt/$1';
+$route['live_count'] = 'Secure/live_count';
 $route['translate_uri_dashes'] = FALSE;
