@@ -71,17 +71,7 @@
                                 </div>                                                                    
                             </div>
                         </li>
-                        <li class="menu-item list-inline-item">
-                            <!-- Mobile menu toggle-->
-                            <a class="navbar-toggle nav-link" id="mobileToggle">
-                                <div class="lines">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                            </a>
-                            <!-- End mobile menu toggle-->
-                        </li>    
+                       
                     </ul> 
 
                 </div>
@@ -100,23 +90,27 @@
         <div class="container-fluid">
 
             <!-- Page-Title -->
-
+<?php if ($this->session->userdata('status') == 2) {?>
+<div class="alert alert-success" role="alert">
+  Terimakasih, Kamu telah berpartisipasi dalam pemira Tahun Ini
+</div>
+<?php } ?>
 
             <div class="row justify-content-md-center">
 
-             <?php foreach ($kandidat as $kandidat) { ?>
+               <?php foreach ($kandidat as $kandidat) { ?>
                 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4  col-xl-4" style="">
                     <div class="card m-b-30 border-0" >
 
                         <h5 class="card-header ">
                             <div class="text-center">
-                                <h4><?php echo $kandidat['nama'] ?></h4>
-                                <p class="text-muted"><?php echo $kandidat['nim'] ?></p>
+                                <h3><?php echo $kandidat['nama'] ?></h3>
+                                <!-- <p class="text-muted"><?php echo $kandidat['nim'] ?></p> -->
 
                             </div>
                         </h5>
                         <div class="card-body  text-center">
-                            <img style="border-color: black" src="<?php echo base_url().'upload/'.$kandidat['nim'].'/foto.jpg' ?>" alt="" class=" mx-auto d-block mb-5 w-50">
+                            <img style="border-color: black" src="<?php echo base_url().'upload/'.$kandidat['nim'].'/foto.jpg' ?>" alt="" class=" mx-auto d-block mb-5 w-75 ">
 
                         </div>
 
@@ -124,12 +118,14 @@
                             <div class="text-center">
 
                                 <div class="row">
-                                   <div class="col-12">
+                                 <div class="col-12">
                                     <button href="<?php echo base_url('kandidat/detail_bem/').$kandidat['nim'] ?>" id="profile" class="btn btn-raised btn-info btn-lg btn-block">VISI & MISI</button>
                                 </div>
-                                <div class="col-12">
-                                    <button onclick="vote(<?php echo "'".$kandidat["nama"]."'".","."'".$kandidat["nim"]."'" ?>);" id="vote" class="btn btn-raised btn-success btn-lg btn-block"> <i class="fa fa-check-square-o"></i> VOTE</button>
-                                </div>
+                                <?php if ($this->session->userdata('status') == 1) {?>
+                                    <div class="col-12">
+                                        <button onclick="vote(<?php echo "'".$kandidat["nama"]."'".","."'".$kandidat["nim"]."'" ?>);" id="vote" class="btn btn-raised btn-success btn-lg btn-block"> <i class="fa fa-check-square-o"></i> VOTE</button>
+                                    </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -147,10 +143,10 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-               © <?= date('Y') ?> KPR STT TERPADU NURUL FIKRI
-           </div>
-       </div>
-   </div>
+             © <?= date('Y') ?> KPR STT TERPADU NURUL FIKRI
+         </div>
+     </div>
+ </div>
 </footer>
 
 
@@ -206,7 +202,7 @@
           if (result.isConfirmed) {
             Swal.fire({
                 title: 'Masukan Password anda untuk memverifikasi',
-                input: 'password',
+                input: 'text',
                 inputAttributes: {
                     autocapitalize: 'off'
                 },
@@ -231,16 +227,18 @@
                 allowOutsideClick: () => !Swal.isLoading()
             }).then((result) => {
               if (result.isConfirmed) {
-                   Swal.fire({
-                    icon: result.value.status,
-                    title: result.value.messages,
-                    text: result.value.pesan,
-                    timer: 5000,
-                })
-               
-               
-           }
-       })
+               Swal.fire({ 
+                icon: result.value.status,
+                title: result.value.messages,
+                text: result.value.pesan,
+                timer: 5000}).then(function() {
+                    window.location.replace("<?php echo base_url('vote') ?>");
+                });
+
+
+
+            }
+        })
         }
     })
   }

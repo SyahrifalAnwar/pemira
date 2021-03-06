@@ -48,7 +48,9 @@
         <td colspan="6" class="title textCenter">
             SURAT UNDANGAN<br />PEMUNGUTAN SUARA
         </td>
-        <td colspan="3" class="logo"></td>
+        <td colspan="3" class="logo">
+             <img src="https://yt3.ggpht.com/ytc/AAUvwnikejavM44WqRa1zC1cNxxuEdW-Pgpg4kPU5G1xCQ=s900-c-k-c0x00ffffff-no-rj" width="150" alt="Logo">
+        </td>
     </tr>
     <tr>
         <td colspan="12" class="textCenter pt-2">
@@ -62,7 +64,8 @@
     </tr>
     <tr>
         <td colspan="12" class="textCenter pt-2">
-            Untuk memberikan suara pada Pemilihan Raya Presma dan Wapresma BEM STT Nurul Fikri 2020/2021 yang akan dilaksanakan pada :
+            Untuk memberikan suara pada Pemilihan Raya Presma BEM STT Nurul Fikri 2020/2021 yang akan dilaksanakan pada :
+
         </td>
     </tr>
     <tr>
@@ -80,27 +83,32 @@
             Website PEMIRA : kprsttnf.com
         </td>
     </tr>
-    <tr>
-        <td colspan="9"></td>
-        <td colspan="3" class="textCenter pt-2">
-            Jakarta, 15 Januari 2021
+     <tr>
+        <td colspan="12" class="textCenter">
+           <b>"Gunakan Hak Suaramu!"</b>
         </td>
     </tr>
     <tr>
-        <td colspan="9"></td>
-        <td colspan="3" class="textCenter">
-            <img src="<?=str_replace("\\", "", base_url('assets/images/leader-signature.png'))?>" width="150" alt="Logo">
+        <td colspan="8"></td>
+        <td colspan="4" class="textCenter pt-2">
+            Jakarta, <?php echo date('d') ?> Februari 2021
         </td>
     </tr>
     <tr>
-        <td colspan="9"></td>
-        <td colspan="3" class="textCenter">
+        <td colspan="8"></td>
+        <td colspan="4" class="textCenter">
+            <img src="<?= str_replace("\\", "", base_url('assets/images/leader-signature.png'))?>" width="150" alt="Tanda Tangan">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="8"></td>
+        <td colspan="4" class="textCenter">
             Ketua Pelaksana
         </td>
     </tr>
     <tr>
-        <td colspan="9"></td>
-        <td colspan="3" class="textCenter">
+        <td colspan="8"></td>
+        <td colspan="4" class="textCenter">
             (Khairul Huda)
         </td>
     </tr>

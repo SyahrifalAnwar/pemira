@@ -189,80 +189,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 			<div class="row justify-content-center ">
-				<div class="col-md-4 col-sm-12">
+				<div class="col-md-6 col-sm-12">
 					<h2><center><img style="width: 50%" src="<?php echo base_url('assets/images/bem.png') ?>"></center></h2>
 					<div class="row justify-content-center ">
 						<?php foreach ($pendaftar_presma as $pendaftar_presma) { ?>
-						<div class="col-6 col-md-6">
-							<div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
-								<div class="position-relative overflow-hidden">
-									<img src="<?php echo base_url('upload/').$pendaftar_presma['ketua_nim'].'/'.$pendaftar_presma['foto'] ?>" alt="" class="img-fluid d-block mx-auto" />
+							<div class="col-6 col-md-6">
+								<div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
+									<div class="position-relative overflow-hidden">
+										<img src="<?php echo base_url('upload/').$pendaftar_presma['ketua_nim'].'/'.$pendaftar_presma['foto'] ?>" alt="" class="img-fluid d-block mx-auto" />
 
+									</div>
+									<div class="p-4">
+										<h3 class="font-size-19 mb-1"><?php echo $pendaftar_presma['ketua_nama']; ?></h3>
+										<p class="text-muted text-uppercase font-size-14 mb-0"><?php echo $pendaftar_presma['ketua_nim']; ?></p><br>
+
+									</div>
 								</div>
-								<div class="p-4">
-									<h3 class="font-size-19 mb-1"><?php echo $pendaftar_presma['ketua_nama']; ?></h3>
-									<p class="text-muted text-uppercase font-size-14 mb-0"><?php echo $pendaftar_presma['ketua_nim']; ?></p><br>
-
-								</div>
 							</div>
-						</div>
-					<?php } ?>
+						<?php } ?>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-12">
-					<h2><center><img style="width: 50%" src="<?php echo base_url('assets/images/dpm.png') ?>"></center></h2>
-					<div class="row justify-content-center ">
-						<?php foreach ($pendaftar_dpm as $pendaftar_dpm) { ?>
-					<div class="col-6">
-						<div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
-							<div class="position-relative overflow-hidden">
-								<img src="<?php echo base_url('upload/').$pendaftar_dpm['nim'].'/'.$pendaftar_dpm['foto'] ?>" alt="" class="img-fluid d-block mx-auto" />
 
-							</div>
-							<div class="p-4">
-								<h3 class="font-size-19 mb-1"><?php echo $pendaftar_dpm['nama']; ?></h3>
-								<p class="text-muted text-uppercase font-size-14 mb-0"><?php echo $pendaftar_dpm['nim']; ?></p><br>
-								<!-- <button id="DetailKandidat" href="<?php echo base_url('kandidat/detail_bem/').$pendaftar_dpm['nim']; ?>" class="btn btn-primary">PROGRAM</button> -->
-							</div>
-						</div>
-					</div>
-				<?php } ?>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-12">
-					<h2><center><img style="width: 50%" src="<?php echo base_url('assets/images/senada.png') ?>"></center></h2>
-						<div class="row justify-content-center ">
-				<div class="col-6">
-					<div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
-						<div class="position-relative overflow-hidden">
-							<img src="<?php echo base_url('upload/senada/1.png') ?>" alt="" class="img-fluid d-block mx-auto" />
-
-						</div>
-						<div class="p-4">
-							<h3 class="font-size-19 mb-1">ASWAR</h3>
-
-						</div>
-					</div>
-				</div>
-				<!-- end col -->
-
-				<div class="col-6">
-					<div class="team-box mt-4 position-relative overflow-hidden rounded text-center shadow">
-						<div class="position-relative overflow-hidden">
-							<img src="<?php echo base_url('upload/senada/2.png') ?>" alt="" class="img-fluid d-block mx-auto" />
-
-						</div>
-						<div class="p-4">
-							<h3 class="font-size-19 mb-1">HADYAN ABDUL AZIZ</h3>
-
-						</div>
-					</div>
-				</div>
-				<!-- end col -->
-
-
-			</div>
-				</div>
 				
 				<!-- end col -->
 

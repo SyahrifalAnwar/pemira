@@ -48,6 +48,7 @@
                                     </div>
                                     <h4 class="page-title">Data Pemilih</h4>
                                 </div>
+                                <a href="<?= base_url('admin/exportpemilih'); ?>" class="btn btn-success">EXPORT EXCEL</a>
                                 <div class="card m-b-30">
                                     <div class="card-body">
                                         <div class="table-responsive">

@@ -22,15 +22,14 @@
 				<li class="nav-item magic-hover magic-hover__square">
 					<a href="<?php echo base_url('agenda_kegiatan') ?>" class="nav-link">Timeline</a>
 				</li>
+				
 				<li class="nav-item magic-hover magic-hover__square">
 					<a href="<?php echo base_url('kandidat') ?>" class="nav-link">Kandidat</a>
 				</li>
-				<!-- <li class="nav-item  magic-hover magic-hover__square">
-					<a href="<?php echo base_url('quick_count') ?>" class="nav-link">Real Count</a>
-				</li> -->
 				
 				
 			</ul>
+			<a href="<?php echo base_url('live_count') ?>" class=" btn btn-sm rounded-pill nav-btn ms-lg-3">Live Count</a>
 			<a href="<?php echo base_url('registrasi_ulang') ?>" class=" btn btn-sm rounded-pill nav-btn ms-lg-3">Registrasi Ulang</a>
 			<a href="<?php echo base_url('secure/login') ?>" class=" btn btn-sm rounded-pill nav-btn ms-lg-3">Login</a>
 		</div>

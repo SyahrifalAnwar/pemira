@@ -161,4 +161,11 @@ class Admin extends CI_Controller {
 		);
 		$this->load->view('admin/data_pemilih', $data);
 	}
+
+	public function exportpemilih()
+	{
+		$data = array(
+			'datauser' => $this->M_data->find_user_full(), );
+		$this->load->view('export/pemilih', $data);
+	}
 }

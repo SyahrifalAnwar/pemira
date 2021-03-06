@@ -23,6 +23,68 @@ class Secure extends CI_Controller {
 		
 	}
 
+	public function live_data()
+	{
+		$this->load->model('M_data');
+		echo json_encode(array('result' => $this->M_data->live_data()));
+	}
+
+	public function live_data_pemilih($value='')
+	{
+		$this->load->model('M_data');
+		echo json_encode(array('result' => $this->M_data->live_data_pemilih()));
+	}
+
+	public function live_data_registrasi($value='')
+	{
+		$this->load->model('M_data');
+		$A16 = $this->M_data->A16();
+		$B16 = $this->M_data->B16();
+		$A17 = $this->M_data->A17();
+		$B17 = $this->M_data->B17();
+		$A18 = $this->M_data->A18();
+		$B18 = $this->M_data->B18();
+		$A19 = $this->M_data->A19();
+		$B19 = $this->M_data->B19();
+		$A20 = $this->M_data->A20();
+		$B20 = $this->M_data->B20();
+		
+		$data['0'] = array($A16,$A17,$A18,$A19,$A20);
+		$data['1'] = array($B16,$B16,$B18,$B19,$B20);
+		
+		// $data = array (
+		// 	array("2018",$A18,$B18),
+		// 	array("2019",$A19,$B19),
+		// 	array("2020",17,15)
+		// );
+
+		$encode = json_encode($data);
+		$replace = str_replace('"',"", $encode);
+		echo $replace;
+	}
+
+	public function live_data_voting($value='')
+	{
+		$this->load->model('M_data');
+		$A16 = $this->M_data->C16();
+		$B16 = $this->M_data->D16();
+		$A17 = $this->M_data->C17();
+		$B17 = $this->M_data->D17();
+		$A18 = $this->M_data->C18();
+		$B18 = $this->M_data->D18();
+		$A19 = $this->M_data->C19();
+		$B19 = $this->M_data->D19();
+		$A20 = $this->M_data->C20();
+		$B20 = $this->M_data->D20();
+		
+		$data['0'] = array($A16, $A17,$A18,$A19,$A20);
+		$data['1'] = array($B16, $B17,$B18,$B19,$B20);
+
+		$encode = json_encode($data);
+		$replace = str_replace('"',"", $encode);
+		echo $replace;
+	}
+
 	public function check_user()
 	{
 		$nim = $this->input->post('nim');
@@ -371,6 +433,9 @@ class Secure extends CI_Controller {
 			if ($statususer == 1) {
 				$simpan_vote = $this->M_data->simpan_vote($data_voting);
 				$ubahlevel = $this->M_data->leveluserdone($id_pemilih);
+				$session = array('status' => 2);
+				$this->session->set_userdata($session);
+
 				$validator['success'] = true;
 				$validator['status'] = 'success';
 				$validator['messages'] = "Voting Berhasil";

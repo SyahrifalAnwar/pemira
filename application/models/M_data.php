@@ -18,6 +18,253 @@ class M_data extends CI_Model {
 
 	}
 
+	public function paslon1()
+	{
+		$sql = "SELECT COUNT(*) as nim FROM vote
+	 	WHERE nim_peserta = '0110218025' ";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+	}
+
+	public function paslon2()
+	{
+		$sql = "SELECT COUNT(*) as nim FROM vote
+	 	WHERE nim_peserta = '0' ";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+	}
+
+	public function C16(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih
+	 	WHERE status = 2 AND (`nim` LIKE '%0110216%' OR `nim` LIKE '%0110116%' ) ";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function C17(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih
+	 	WHERE status = 2 AND (`nim` LIKE '%0110217%' OR `nim` LIKE '%0110117%' ) ";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function C18(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih
+	 	WHERE status = 2 AND (`nim` LIKE '%0110218%' OR `nim` LIKE '%0110118%' ) ";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function C19(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih
+	 	WHERE status = 2 AND (`nim` LIKE '%0110219%' OR `nim` LIKE '%0110119%' ) ";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function C20(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih
+	 	WHERE status = 2 AND (`nim` LIKE '%0110220%' OR `nim` LIKE '%0110120%' ) ";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function D16(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih
+	 	WHERE status = 1 AND (`nim` LIKE '%0110216%' OR `nim` LIKE '%0110116%' ) ";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function D17(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih
+	 	WHERE status = 1 AND (`nim` LIKE '%0110217%' OR `nim` LIKE '%0110117%' ) ";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function D18(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih
+	 	WHERE status = 1 AND (`nim` LIKE '%0110218%' OR `nim` LIKE '%0110118%' ) ";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function D19(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih
+	 	WHERE status = 1 AND (`nim` LIKE '%0110219%' OR `nim` LIKE '%0110119%' ) ";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function D20(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih
+	 	WHERE status = 1 AND (`nim` LIKE '%0110220%' OR `nim` LIKE '%0110120%' ) ";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function A16(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih WHERE (status = 1 or status = 2) AND (`nim` LIKE '%0110216%' OR `nim` LIKE '%0110116%') ";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function B16(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih WHERE (status = 0) AND (`nim` LIKE '%0110216%' OR `nim` LIKE '%0110116%') ";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function A17(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih WHERE (status = 1 or status = 2) AND (`nim` LIKE '%0110217%' OR `nim` LIKE '%0110117%') ";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function B17(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih WHERE (status = 0) AND (`nim` LIKE '%0110217%' OR `nim` LIKE '%0110117%') ";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function A18(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih WHERE (status = 1 or status = 2) AND (`nim` LIKE '%0110218%' OR `nim` LIKE '%0110118%') ";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function B18(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih WHERE (status = 0) AND (`nim` LIKE '%0110218%' OR `nim` LIKE '%0110118%')";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function A19(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih WHERE (status = 1 or status = 2) AND (`nim` LIKE '%0110219%' OR `nim` LIKE '%0110119%') ";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function B19(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih WHERE (status = 0) AND (`nim` LIKE '%0110219%' OR `nim` LIKE '%0110119%')";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function A20(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih WHERE (status = 1 or status = 2) AND (`nim` LIKE '%0110220%' OR `nim` LIKE '%0110120%') ";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function B20(){
+
+		$sql = "SELECT COUNT(*) as nim FROM pemilih WHERE (status = 0) AND (`nim` LIKE '%0110220%' OR `nim` LIKE '%0110120%')";
+			$query = $this->db->query($sql);
+			$result = $query->row_array();
+			return ($query->num_rows() === 1 ? $result['nim'] : false);
+
+	}
+
+	public function live_data()
+	{
+		$sql = $this->db->query("SELECT b.nama, COUNT(a.id_vote) pemilih FROM vote a INNER JOIN kandidat b ON a.nim_peserta=b.nim GROUP BY b.nama");
+		$result = array();
+		foreach ($sql->result() as $data) {
+			$result[] = array(
+				'name'  => $data->nama,
+				'y' => (float)$data->pemilih
+			);
+		}
+		return $result;
+	}
+
+	public function live_data_pemilih($value='')
+	{
+		$sql = $this->db->query("SELECT SUBSTRING(`nim_pemilih`, 6, 2) AS `angkatan` COUNT(`nim_pemilih`) FROM vote GROUP BY angkatan");
+		$result = array();
+		foreach ($sql->result() as $data) {
+			$result[] = array(
+				'name'  => $data->angkatan,
+				'y' => (float)$data->pemilih
+			);
+		}
+		return $result;
+	}
+
+	public function live_data_registrasi($value='')
+	{
+		$sql = $this->db->query("SELECT SUBSTRING(`nim_pemilih`, 6, 2) AS `angkatan` COUNT(`nim_pemilih`) FROM vote GROUP BY angkatan");
+		$result = array();
+		foreach ($sql->result() as $data) {
+			$result[] = array(
+				'name'  => $data->angkatan,
+				'y' => (float)$data->pemilih
+			);
+		}
+		return $result;
+	}
+
 	public function checkleveluser_vote($nim, $password){
 
 		if($nim && $password) {
@@ -81,14 +328,14 @@ class M_data extends CI_Model {
 
 	public function count_peserta()
 	{
-		$sql = "SELECT count(nim) as count_peserta FROM `pemilih` WHERE id_level = 3";
+		$sql = "SELECT count(nim) as count_peserta FROM `pemilih` WHERE id_level = 3 OR id_level = 5";
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
 
 	public function count_peserta_regis($value='')
 	{
-		$sql = "SELECT count(nim) as count_peserta_regis FROM `pemilih` WHERE id_level = 3 AND status = 1";
+		$sql = "SELECT count(nim) as count_peserta_regis FROM `pemilih` WHERE (id_level = 3 OR id_level = 5) AND (status = 1 OR status = 2)";
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
@@ -129,7 +376,7 @@ class M_data extends CI_Model {
 		FROM
 		`pemilih` AS a
 		, (SELECT @row := 0) r 
-		WHERE 1=1 AND id_level = 3
+		WHERE 1=1 AND (id_level = 3 OR id_level = 5)
 
 		";
 
@@ -171,7 +418,7 @@ class M_data extends CI_Model {
 		FROM
 		`pemilih` AS a
 		, (SELECT @row := 0) r 
-		WHERE 1=1 AND id_level = 3
+		WHERE 1=1 AND (id_level = 3 OR id_level = 5)
 
 		";
 
@@ -238,7 +485,14 @@ class M_data extends CI_Model {
 
 	public function find_user($id)
 	{
-		$sql = "SELECT * FROM `pemilih` WHERE `nim` = '$id'";
+		$sql = "SELECT  * FROM `pemilih` WHERE `nim` = '$id'";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+
+	public function find_user_full()
+	{
+		$sql = "SELECT SUBSTRING(`nim`, 6, 5) AS `angkatan`, `nama`,`nim`,`email`,`status` FROM `pemilih` WHERE `id_level` != 1 ORDER BY`angkatan` DESC";
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}

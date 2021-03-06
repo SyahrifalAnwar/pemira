@@ -6,6 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!DOCTYPE html>
 <html lang="en">
 <?php $this->load->view('include/head') ?>
+<script src="https://code.highcharts.com/highcharts.js"></script>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<!--Start of Tawk.to Script-->
@@ -160,7 +161,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 			</section>
 			<!-- Services end -->
+	<section class="section bg-light" id="features">
+				<div class="container">
+					
 
+					<div data-aos="fade-down" class="row align-items-center mb-5">
+						
+						<div class="col-md-12 ms-md-auto order-1 order-md-2">
+							 <div id="live-pemilih" ></div>
+						</div>
+					</div>
+					<!-- end row -->
+					
+				</div>
+				<!-- end container -->
+			</section>
 			<!-- Features start -->
 			<section class="section bg-light" id="features">
 				<div class="container">
@@ -279,6 +294,58 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 				<!-- feather-icons js -->
 				<?php $this->load->view('include/script') ?>
+
+				<script type="text/javascript" language="javascript" >
+    function getData_pemilih() {
+        $.getJSON( "<?=base_url('secure/live_data_registrasi')?>", function( response ) {
+            Highcharts.chart('live-pemilih', {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'column'
+                },
+                title: {
+                    text: 'DAFTAR MAHASISWA YANG MELAKUKAN REGISTRASI'
+                },
+                xAxis: {
+                    categories: ['2016','2017', '2018', '2019', '2020']
+                },
+                tooltip: {
+                    formatter: function () {
+                        return '<b>' + this.x + '</b><br/>' +
+                        this.series.name + ': ' + this.y + '<br/>'
+                    }
+                },
+
+                accessibility: {
+                    point: {
+                        valueSuffix: '%'
+                    }
+                },
+               
+                credits: {
+                    enabled: false
+                },
+               series: [{
+        name: 'Sudah Registrasi',
+        data: response[0],
+        stack: 'sudah'
+    }, {
+        name: 'Belum Registrasi',
+        data: response[1],
+        stack: 'belum'
+    }]
+         })
+        }, "json" )
+    }
+    $(document).ready(function() {
+        getData_pemilih()
+        setInterval(() => {
+            getData_pemilih()
+        }, 60000)
+    })
+</script>
 				
 				<script>
 					AOS.init();

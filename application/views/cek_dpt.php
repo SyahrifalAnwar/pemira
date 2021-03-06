@@ -40,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row align-items-center hero-content">
 				<div class="col-lg-12">
-					<h3 class="text-white text-center display-4 font-weight-semibold mb-4 hero-1-title">CEK Daftar Pemilih Tetap</h3>
+					<h3 class="text-white text-center display-4 font-weight-semibold mb-4 hero-1-title">Unduh Undangan</h3>
 
 
 				</div>

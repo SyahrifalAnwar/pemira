@@ -20,7 +20,7 @@
             <!-- ========== Left Sidebar Start ========== -->
            
             <!-- Left Sidebar End -->
-                <?php $this->load->view('admin_include/menu') ?>
+                <?php $this->load->view('admin_include/menu_kandidat') ?>
             <!-- Start right Content here -->
 
             <div class="content-page">
